@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Organizational Information</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body class="body_organizationalinfo">
+
+<!-- ================= HEADER IMAGE (STICKY) ================= -->
+<div class="header-image sticky-top">
+  <img src="assets/images/Headers/Sub_Organizational Behavior.jpg" class="w-100" alt="Header Image">
+
+  <!-- ================= NAVBAR (STICKY) ================= -->
+<div class="custom-navbar">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <h6 class="text-white m-0">New Vendor Enrollment</h6>
+
+    <div>
+      <label class="text-white me-2">Change Language:</label>
+      <select class="form-select form-select-sm d-inline w-auto">
+        <option>English</option>
+        <option>French</option>
+         <option>Spanish</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------Wizard----------------------- -->
+<div class="container-fluid py-5 sticky-top">
+  <div class="wizard-line">
+
+    <!-- Icon 1 -->
+    <div class="wizard-icon start">
+      <i class="fa-sharp fa-solid fa-building fa-sm" style="color: #ffffff;"></i>
+    </div>
+
+    <!-- Text between icon 1 & 2 -->
+    <div class="wizard-text between-1-2 fw-bold">
+      Organizational Information
+    </div>
+
+    <!-- Icon 2 -->
+    <div class="wizard-icon middle">
+     <i class="fa-solid fa-gavel fa-sm" style="color: #000000;"></i>
+    </div>
+    <!-- Text between icon 1 & 2 -->
+    <div class="wizard-text between-2-3">
+      Economic Sanctions - Counter Terrorism
+    </div>
+
+    <!-- Icon 3 -->
+    <div class="wizard-icon end">
+   <i class="fa-solid fa-building-columns fa-sm" style="color: #000000;"></i>
+    </div>
+     <!-- Text between icon 1 & 2 -->
+    <div class="wizard-text between-3-0">
+     Electronic Banking Information
+    </div>
+
+
+  </div>
+</div>
+<!-- --------------------Wizard End--------------------- -->
+</div>
+
+
+
+<!-- ================= FORM CONTAINER (ONE SINGLE DIV) ================= -->
+<div class="content-scroll-area">
+<div class="container-fluid my-4">
+
+  <div class="form-card small-card">
+
+    <h6 class="mb-4 org">Organizational Information</h6>
+
+    <form>
+
+     <div class="mb-4">
+  <div class="d-flex align-items-center gap-4 flex-wrap">
+
+    <!-- Label -->
+    <label class="form-label mb-0">
+      US or Non-US Organization <span class="text-danger">*</span>
+    </label>
+
+    <!-- US Radio -->
+    <div class="form-check form-check-inline mb-0">
+      <input class="form-check-input radio-lg"
+             type="radio"
+             name="orgType"
+             id="usOrg">
+      <label class="form-check-label" for="usOrg">
+        US Organization
+      </label>
+    </div>
+
+    <!-- Non-US Radio -->
+    <div class="form-check form-check-inline mb-0">
+      <input class="form-check-input radio-lg"
+             type="radio"
+             name="orgType"
+             id="nonUsOrg">
+      <label class="form-check-label" for="nonUsOrg">
+        Non-US Organization
+      </label>
+    </div>
+
+  </div>
+</div>
+
+      <!-- Organization Name -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Organizational Legal Name<span class="text-danger">*</span></label>
+          <input type="text" class="form-control custom-input-width">
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Organization Alias</label>
+          <input type="text" class="form-control custom-input-width">
+        </div>
+      </div>
+
+      <!-- Website -->
+      <div class="row">
+      <div class="col-md-6 mb-4">
+        <label class="form-label">Organization Website</label>
+        <input type="url" class="form-control custom-input-width">
+      </div>
+      </div>
+
+      <!-- Address -->
+      <h6 class="mt-4 mb-4">Organizational Headquarter Address</h6>
+
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Address Line 1<span class="text-danger">*</span></label>
+          <input type="text" class="form-control custom-input-width">
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Address Line 2</label>
+          <input type="text" class="form-control custom-input-width">
+        </div>
+      </div>
+
+   <!-- <City----- and Country----> 
+<div class="row">
+        <div class="col-md-6 mb-4">
+          <label class="form-label">City<span class="text-danger">*</span></label>
+          <input type="text" class="form-control custom-input-width">
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Country<span class="text-danger">*</span></label>
+          <select class="form-select custom-input-width">
+            <option>--Select--</option>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+
+          </select>
+        </div>
+      </div>
+
+
+ <!-- <City----- and Zip Code----> 
+<div class="row">
+        <div class="col-md-6 mb-4">
+          
+          <label class="form-label">State<span class="text-danger">*</span></label>
+          <select class="form-select custom-input-width">
+            <option>--Select--</option>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+
+          </select>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Zip/Country Code<span class="text-danger">*</span></label>
+          <input type="text" class="form-control custom-input-width">
+        </div>
+      </div>
+
+
+      <!-- Tax Info -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Organizational Tax Status<span class="text-danger">*</span></label>
+          <select class="form-select custom-input-width">
+            <option>--Select--</option>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+          </select>
+        </div>
+
+        <div class="col-md-4 mb-4">
+  <label class="form-label">Evidence of Tax Status</label>
+
+  <div class="d-flex gap-2">
+    <input type="file" class="form-control custom-input-width">
+    <button class="btn btn-success">Upload</button>
+  </div>
+</div>
+      </div>
+
+      <!-- Tax Info -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Federal Tax Identification/Employer Identification Number (EIN)<span class="text-danger">*</span></label>
+          <input type="text" class="form-control custom-input-width">
+        </div>
+
+        <div class="col-md-4 mb-4">
+  <label class="form-label">Evidence of the Organization's Legal Status</label>
+
+  <div class="d-flex gap-2">
+    <input type="file" class="form-control custom-input-width">
+    <button class="btn btn-success">Upload</button>
+  </div>
+</div>
+      </div>
+
+
+
+      <!-- <City----- and Zip Code----> 
+<div class="row">
+        <div class="col-md-6 mb-4">
+          
+          <label class="form-label">State or Country of Establishment, Incorporation or, Registration</label>
+          <select class="form-select custom-input-width">
+            <option>--Select--</option>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+
+          </select>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <label class="form-label">Unique Entity Identifier, UEI (SAM)
+            <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
+       data-bs-toggle="tooltip"
+       data-bs-placement="top"
+       title="UEI is a unique identifier required for all organizations registered in SAM.">
+    </i>
+          </label>
+
+          <input type="text" class="form-control custom-input-width">
+        </div>
+      </div>
+
+
+<!-- !-- <City----- and Zip Code---->  
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <label class="form-label">
+      Organization Fiscal Year <span class="text-danger">*</span>
+    </label>
+
+    <div class="d-flex align-items-center gap-3">
+      
+      <!-- From -->
+      <select class="form-select custom-input-width-calender">
+        <option>--Select--</option>
+        <option>2022</option>
+        <option>2023</option>
+        <option>2024</option>
+      </select>
+
+      <!-- TO -->
+      <span class="fw-semibold">To</span>
+
+      <!-- To -->
+      <select class="form-select custom-input-width-calender">
+        <option>--Select--</option>
+        <option>2023</option>
+        <option>2024</option>
+        <option>2025</option>
+      </select>
+
+    </div>
+  </div>
+</div>
+        
+
+
+
+
+      <div class="mb-4 d-flex align-items-start gap-0">
+
+  <!-- Label -->
+  <label class="form-label mb-0" style="min-width: 250px;">
+    Total Value of FCDO Portfolio<span class="text-danger">*</span>
+  </label>
+
+  <!-- Vertical Radios -->
+  <div>
+    <div class="form-check mb-2">
+      <input class="form-check-input radio-lg"
+             type="radio"
+             name="orgType"
+             id="nonUsOrg">
+      <label class="form-check-label" for="threshold1">
+        Threshold 1 <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
+       data-bs-toggle="tooltip"
+       data-bs-placement="top"
+       title="UEI is a unique identifier required for all organizations registered in SAM.">
+    </i>
+        
+      </label>
+    </div>
+
+    <div class="form-check mb-2">
+      <input class="form-check-input radio-lg"
+             type="radio"
+             name="orgType"
+             id="nonUsOrg">
+      <label class="form-check-label" for="threshold2">
+        Threshold 2 <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
+       data-bs-toggle="tooltip"
+       data-bs-placement="top"
+       title="UEI is a unique identifier required for all organizations registered in SAM.">
+    </i>
+      </label>
+    </div>
+
+    <div class="form-check mb-2">
+    <input class="form-check-input radio-lg"
+             type="radio"
+             name="orgType"
+             id="nonUsOrg">
+      <label class="form-check-label" for="threshold3">
+        Threshold 3 <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
+       data-bs-toggle="tooltip"
+       data-bs-placement="top"
+       title="UEI is a unique identifier required for all organizations registered in SAM.">
+    </i>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- FCDO Identifications -->
+
+<div class="mb-4 d-flex align-items-start gap-0">
+
+  <!-- Label -->
+  <label class="form-label mb-0" style="min-width: 250px;">
+    FCDO Identifications<span class="text-danger">*</span>
+    <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
+       data-bs-toggle="tooltip"
+       data-bs-placement="top"
+       title="UEI is a unique identifier required for all organizations registered in SAM.">
+    </i>
+  </label>
+
+  <!-- Vertical Radios -->
+  <div>
+    <div class="form-check mb-2">
+      <input class="form-check-input radio-lg"
+             type="checkbox"
+             name="orgType"
+             id="nonUsOrg">
+      
+        Small or medium-sized enterprise (SME) <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
+       data-bs-toggle="tooltip"
+       data-bs-placement="top"
+       title="UEI is a unique identifier required for all organizations registered in SAM.">
+    </i>
+        
+      </label>
+    </div>
+
+    <div class="form-check mb-2">
+       <input class="form-check-input radio-lg"
+             type="checkbox"
+             name="orgType"
+             id="nonUsOrg">
+      
+       Women-owned business <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
+       data-bs-toggle="tooltip"
+       data-bs-placement="top"
+       title="UEI is a unique identifier required for all organizations registered in SAM.">
+    </i>
+      </label>
+    </div>
+
+    
+  </div>
+
+</div>
+      <!-- Buttons -->
+     <div class="text-center mt-4 d-flex justify-content-center gap-2">
+ <a href="index.html" class="same-btn">Back</button></a> 
+ <a href="Economicsanctions.html" class="same-btn">Save & Proceed</a>
+
+</div>
+
+    </form>
+  </div>
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="wcs-footer">
+  <div class="footer-content container mt-3">
+    <h4>Wildlife Conservation Society</h4>
+    <p>
+      WCS, the “W” logo, WE STAND FOR WILDLIFE, I STAND FOR WILDLIFE, and 
+      STAND FOR WILDLIFE are service marks of Wildlife Conservation Society.
+    </p>
+
+    <hr class="my-0">
+
+    <p class="copy">
+      ©2025 Wildlife Conservation Society
+    </p>
+  </div>
+</footer>
+</div>
+</body>
+</html>
