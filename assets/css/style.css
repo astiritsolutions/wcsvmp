@@ -52,6 +52,20 @@
   margin: 0;
   overflow: hidden;   /* 🔑 disables full page scroll */
 }
+.body_thankyou{
+  background-image: url("../images/Watermarks/subrecipient_successpage.jpg"); /* Your watermark image */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-position: center 120px;      /* adjust watermark size */
+  background-attachment: fixed;
+  font-size: 14px;
+}
+.body_thankyou{             
+  height: 100%;
+  margin: 0;
+  
+}
 
 
 
@@ -326,11 +340,14 @@
 .custom-input-width {
   width: 100%;
   max-width: 40rem;   /* desktop limit */
+  height: 34px;
+ 
 }
 
 .custom-input-width-calender {
   width: 100%;
   max-width: 18.5rem;
+  height: 34px;
 }
 
 
@@ -428,8 +445,8 @@
 .wizard-icon {
   position: absolute;
   top: 50%;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background-color: #2f8f6b;
   display: flex;
@@ -502,7 +519,7 @@
 .wizard-text {
   position: absolute;
   top: 18px;              /* below the line */
-  font-size: 16px;        /* INCREASED FONT SIZE */
+  font-size: 15px;        /* INCREASED FONT SIZE */
   font-weight: 600;
   color: #2f8f6b;
   white-space: nowrap;
@@ -542,7 +559,7 @@
 .wizard-text-e {
   position: absolute;
   top: 18px;              /* below the line */
-  font-size: 16px;        /* INCREASED FONT SIZE */
+  font-size: 15px;        /* INCREASED FONT SIZE */
   font-weight: 600;
   color: #2f8f6b;
   white-space: nowrap;
@@ -550,7 +567,7 @@
 .wizard-text-b {
   position: absolute;
   top: 18px;              /* below the line */
-  font-size: 16px;        /* INCREASED FONT SIZE */
+  font-size: 15px;        /* INCREASED FONT SIZE */
   font-weight: 600;
   color: #2f8f6b;
   white-space: nowrap;
@@ -643,8 +660,8 @@
   content: "";
   position: absolute;
   left: 3%;
-  right: 50%;
-  width: 70%;              /* 100% - 40% */
+  right: 40%;
+  width: 72%;              /* 100% - 40% */
   height: 4px;
   background-color: #2f8f6b; /* ASH */
   z-index: 1;
@@ -707,7 +724,7 @@
   }
 
   .wizard-text {
-    font-size: 14px;
+    font-size: 13px;
     top: 22px;
   }
 
@@ -740,7 +757,7 @@
   }
 
   .wizard-text {
-    font-size: 13px;
+    font-size: 12px;
     white-space: normal;      /* 🔑 allows wrapping */
     text-align: center;
     width: 120px;
@@ -748,7 +765,7 @@
   }
   
  .wizard-text-e {
-    font-size: 13px;
+    font-size: 12px;
     white-space: normal;      /* 🔑 allows wrapping */
     text-align: center;
     width: 120px;
@@ -756,7 +773,7 @@
   }
   
    .wizard-text-b {
-    font-size: 13px;
+    font-size: 12px;
     white-space: normal;      /* 🔑 allows wrapping */
     text-align: center;
     width: 120px;
@@ -795,7 +812,7 @@
   }
 
   .wizard-text {
-    font-size: 12px;
+    
     width: 100px;
     top: 30px;
   }
@@ -893,6 +910,7 @@
   padding: 12px 10px;
   text-align: center;
 }
+
 .wcs-footer{
   height: 150px;
 }
@@ -936,6 +954,72 @@
  
   font-size: 13px;
  
+}
+.wcs-footer-thankyou {
+  background-image: url("../images/Watermarks/Footerbg.png");
+  background-color: #1e6b4e;
+
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;   /* responsive height */
+
+  color: #ffffff;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.wcs-footer-thankyou{
+  height: 150px;
+}
+/* Content width */
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+  height: auto;
+}
+
+/* Divider */
+.wcs-footer hr {
+ 
+  border-top: 1px solid #aac;
+  
+  margin: 15px auto;
+}
+.wcs-footer hr {
+ 
+  
+  width: 100%;
+  margin: 15px auto;
+}
+
+/* Title */
+.footer-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.footer-content p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Copyright */
+.copy {
+ 
+  font-size: 13px;
+ 
+}
+.wcs-footer-thankyou{
+
+
+position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
 }
 
 /* ================= MOBILE ================= */
@@ -1074,6 +1158,23 @@
     min-height: 120vh;                   /* increase height if needed */
   }
 }
+
+@media (max-width: 576px) {
+  .body_thankyou {
+    background-size: cover;              /* make image fill screen */
+    background-position: top center;     /* better visibility */
+    background-attachment: scroll;       /* fixed breaks on mobile */
+    min-height: 120vh;                   /* increase height if needed */
+  }
+}
+
+
+
+
+
+
+
+
 @media (max-width: 576px) {
   .body_bankinginformation {
     background-size: cover;              /* make image fill screen */
@@ -1108,6 +1209,19 @@
     min-height: 110vh;
   }
 }
+@media (min-width: 577px) and (max-width: 991px) {
+  .body_thankyou {
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+    min-height: 110vh;
+  }
+}
+
+
+
+
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .body_organizationalinfo {
     background-size: 100%;
@@ -1127,3 +1241,39 @@
     min-height: 100vh;
   }
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .body_thankyou {
+    background-size: 100%;
+    min-height: 100vh;
+  }
+}
+
+
+
+
+
+
+/* Card container */
+
+/* Check icon circle */
+.check-icon {
+  width: 60px;
+  height: 60px;
+  border: 3px solid #2e8b72;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e8b72;
+  font-size: 30px;
+}
+
+/* Title *
+/* Description text */
+.thankyou-text {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+
