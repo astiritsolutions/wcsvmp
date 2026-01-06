@@ -12,17 +12,24 @@
   background-attachment: fixed;
   font-size: 14px;
   
+  
 
 }
 .body_organizationalinfo{
   height: 100%;
-  margin: 0;
   overflow: hidden;   /* 🔑 disables full page scroll */
+  
 }
 .content-scroll-area{
-  height: calc(100vh - 300px); /* hero height */
+    flex: 1 1 auto;                /* take remaining height */
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  
+
+  /* prevents footer getting "cut" on mobile browsers */
+  
+  
 }
 .body_economicsanctions{
     background-image: url("../images/Watermarks/subrecipient_Economicsanctions.jpg"); /* Your watermark image */
@@ -35,7 +42,7 @@
 }
 .body_economicsanctions{
   height: 100%;
-  margin: 0;
+
   overflow: hidden;   /* 🔑 disables full page scroll */
 }
 .body_bankinginformation{
@@ -346,7 +353,7 @@
 
 .custom-input-width-calender {
   width: 100%;
-  max-width: 18.5rem;
+  max-width: 18.5rem;   /* desktop limit */
   height: 34px;
 }
 
@@ -414,9 +421,29 @@
 
 
 /* ================= HEADER ================= */
+
 .header-image {
   z-index: 1030;
+  overflow: hidden;              /* important for cropping */
 }
+
+/* Desktop/Tablet (normal) */
+.header-image img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Mobile ONLY: focus on "Vendor Management Portal" text area */
+@media (max-width: 576px) {
+  .header-image img {
+    height: 90px;                /* reduce height on mobile */
+    object-position: 100% 20%;   /* shift focus to right side */
+  }
+}
+
 
 /* ================= NAVBAR ================= */
 .custom-navbar {
@@ -497,6 +524,12 @@
   top: 50%;
   z-index: 3;
   left: 75%;
+}
+.language-select {
+  width: 90px;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  height: 25px;
 }
 .wizard-icon.end-b
  {
@@ -620,6 +653,19 @@
 }
 
 
+
+  .tooltip-inner {
+    max-width: 250px;
+    padding: 8px 10px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .tooltip-icon {
+    color: #1f7a5c;
+    cursor: pointer;
+  }
 
 
 
@@ -874,6 +920,10 @@
   border-radius: 12px;
   padding: 24px 28px;
 }
+.senior-box{
+  padding: 8px 20px;
+  
+}
 
 /* Responsive spacing */
 @media (max-width: 768px) {
@@ -891,136 +941,100 @@
   border-radius: 6px;
   cursor: pointer;
   width: 200px;
-  height: 44px;
+  height: 40px;
   text-decoration: none;
   
 }
 
 
- /* ================= FOOTER ================= */
 .wcs-footer {
-  background-image: url("../images/Watermarks/Footerbg.png");
   background-color: #1e6b4e;
-
+  background-image: url("../images/Watermarks/Footerbg.png");
   background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: 100% 100%;   /* responsive height */
+  background-position: center bottom;
+  background-size: cover;
+  color: #fff;
 
-  color: #ffffff;
-  padding: 12px 10px;
-  text-align: center;
+  
 }
 
-.wcs-footer{
-  height: 150px;
+
+/* Title */
+.wcs-footer .footer-title{
+  font-size: 15px;      /* increased */
+  line-height: 1.2;
+  margin-bottom: 6px;
 }
-/* Content width */
-.footer-content {
-  max-width: 900px;
-  margin: auto;
-  height: auto;
+
+/* Description */
+.wcs-footer .footer-text{
+  font-size: 12px;      /* increased */
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 950px;
 }
 
 /* Divider */
-.wcs-footer hr {
- 
-  border-top: 1px solid #aac;
-  
-  margin: 15px auto;
-}
-.wcs-footer hr {
- 
-  
-  width: 100%;
-  margin: 15px auto;
+
+
+/* Bottom copyright strip */
+.wcs-footer-bottom{
+  border-top: 1px solid rgba(255,255,255,0.65);
+  font-size: 16px;
+  line-height: 1.2;
+  background: #1c573a;
 }
 
-/* Title */
-.footer-content h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
 
-/* Text */
-.footer-content p {
-  font-size: 14px;
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
 
-/* Copyright */
-.copy {
- 
-  font-size: 13px;
- 
-}
 .wcs-footer-thankyou {
-  background-image: url("../images/Watermarks/Footerbg.png");
   background-color: #1e6b4e;
-
+  background-image: url("../images/Watermarks/Footerbg.png");
   background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: 100% 100%;   /* responsive height */
-
-  color: #ffffff;
-  padding: 12px 10px;
-  text-align: center;
-}
-
-.wcs-footer-thankyou{
-  height: 150px;
-}
-/* Content width */
-.footer-content {
-  max-width: 900px;
-  margin: auto;
-  height: auto;
-}
-
-/* Divider */
-.wcs-footer hr {
- 
-  border-top: 1px solid #aac;
+  background-position: center bottom;
+  background-size: cover;
+  color: #fff;
   
-  margin: 15px auto;
-}
-.wcs-footer hr {
- 
-  
-  width: 100%;
-  margin: 15px auto;
-}
-
-/* Title */
-.footer-content h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-/* Text */
-.footer-content p {
-  font-size: 14px;
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-/* Copyright */
-.copy {
- 
-  font-size: 13px;
- 
 }
 .wcs-footer-thankyou{
-
-
-position: fixed;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 1030;
 }
+
+/* Title */
+.wcs-footer-thankyou .footer-title{
+  font-size: 15px;      /* increased */
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+/* Description */
+.wcs-footer-thankyou .footer-text{
+  font-size: 12px;      /* increased */
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 950px;
+}
+
+/* Divider */
+
+
+/* Bottom copyright strip */
+.wcs-footer-bottom{
+  border-top: 1px solid rgba(255,255,255,0.65);
+  font-size: 16px;
+  line-height: 1.2;
+  background: #1c573a;
+}
+
+
+
+
+
+
+
 
 /* ================= MOBILE ================= */
 @media (max-width: 576px) {
