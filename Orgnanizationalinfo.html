@@ -11,6 +11,7 @@
 
   <!-- Custom CSS -->
 <link rel="stylesheet" href="./assets/css/style.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
@@ -27,7 +28,7 @@
 
     <div>
       <label class="text-white me-2">Change Language:</label>
-      <select class="form-select form-select-sm d-inline w-auto">
+      <select class="form-select form-select-sm d-inline language-select">
         <option>English</option>
         <option>French</option>
          <option>Spanish</option>
@@ -78,7 +79,7 @@
 
 <!-- ================= FORM CONTAINER (ONE SINGLE DIV) ================= -->
 <div class="content-scroll-area">
-<div class="container-fluid my-4">
+<div class="container-fluid my-3">
 
   <div class="form-card small-card">
 
@@ -166,10 +167,21 @@
           <label class="form-label">Country<span class="text-danger">*</span></label>
           <select class="form-select custom-input-width">
             <option>--Select--</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
+            <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>Andorra</option>
+            <option>Bahamas</option>
+<option>Bahrain</option>
+<option>Bangladesh</option>
+<option>Barbados</option>
+<option>Cabo Verde</option>
+<option>Cambodia</option>
+<option>Cameroon</option>
+<option>Denmark</option>
+<option>Djibouti</option>
+<option>Germany</option>
+ 
 
           </select>
         </div>
@@ -183,11 +195,18 @@
           <label class="form-label">State<span class="text-danger">*</span></label>
           <select class="form-select custom-input-width">
             <option>--Select--</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
-
+           <option>Kabul</option>
+<option>Herat</option>
+<option>Kandahar</option>
+<option>Tirana</option>
+<option>Durres</option>
+<option>Vlore</option>
+<option>Andorra la Vella</option>
+<option>Escaldes-Engordany</option>
+<option>Encamp</option>
+<option>New Providence</option>
+<option>Grand Bahama</option>
+<option>Abaco</option>
           </select>
         </div>
 
@@ -204,10 +223,12 @@
           <label class="form-label">Organizational Tax Status<span class="text-danger">*</span></label>
           <select class="form-select custom-input-width">
             <option>--Select--</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
+            <option>Recognized as tax-exempt by IRS as a 501(c)(3)</option>
+            <option>Recognized as tax-exempt under other IRS Tax Code</option>
+            <option>Recognized as non-taxable under a Non-US Country Tax Code</option>
+            <option>US for-profit(taxable)</option>
+                        <option>Non-US for-profit(taxable)</option>
+                                    <option>Other</option>
           </select>
         </div>
 
@@ -247,10 +268,20 @@
           <label class="form-label">State or Country of Establishment, Incorporation or, Registration</label>
           <select class="form-select custom-input-width">
             <option>--Select--</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
+            <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>Andorra</option>
+            <option>Bahamas</option>
+<option>Bahrain</option>
+<option>Bangladesh</option>
+<option>Barbados</option>
+<option>Cabo Verde</option>
+<option>Cambodia</option>
+<option>Cameroon</option>
+<option>Denmark</option>
+<option>Djibouti</option>
+<option>Germany</option>
 
           </select>
         </div>
@@ -281,9 +312,18 @@
       <!-- From -->
       <select class="form-select custom-input-width-calender">
         <option>--Select--</option>
-        <option>2022</option>
-        <option>2023</option>
-        <option>2024</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
       </select>
 
       <!-- TO -->
@@ -292,9 +332,18 @@
       <!-- To -->
       <select class="form-select custom-input-width-calender">
         <option>--Select--</option>
-        <option>2023</option>
-        <option>2024</option>
-        <option>2025</option>
+          <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
       </select>
 
     </div>
@@ -314,48 +363,47 @@
 
   <!-- Vertical Radios -->
   <div>
+   
     <div class="form-check mb-2">
-      <input class="form-check-input radio-lg"
-             type="radio"
-             name="orgType"
-             id="nonUsOrg">
-      <label class="form-check-label" for="threshold1">
-        Threshold 1 <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
-       data-bs-toggle="tooltip"
-       data-bs-placement="top"
-       title="UEI is a unique identifier required for all organizations registered in SAM.">
-    </i>
-        
-      </label>
-    </div>
+    <input class="form-check-input radio-lg" type="radio" name="orgType" id="threshold1">
+    <label class="form-check-label" for="threshold1">
+      Threshold 1
+      <i class="fa-solid fa-circle-question fa-xl ms-1 tooltip-icon"
+         data-bs-toggle="tooltip"
+         data-bs-placement="top"
+         title="Your organization is the recipient or subrecipient of an individual FCDO contract of GBP 1 million or above, or two or more FCDO contracts with a combined value of GBP 5 million or above.">
+      </i>
+    </label>
+  </div>
 
     <div class="form-check mb-2">
-      <input class="form-check-input radio-lg"
-             type="radio"
-             name="orgType"
-             id="nonUsOrg">
-      <label class="form-check-label" for="threshold2">
-        Threshold 2 <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
-       data-bs-toggle="tooltip"
-       data-bs-placement="top"
-       title="UEI is a unique identifier required for all organizations registered in SAM.">
-    </i>
-      </label>
-    </div>
+    <input class="form-check-input radio-lg" type="radio" name="orgType" id="threshold2">
+    <label class="form-check-label" for="threshold2">
+      Threshold 2
+      <i class="fa-solid fa-circle-question fa-xl ms-1 tooltip-icon"
+         data-bs-toggle="tooltip"
+         data-bs-placement="top"
+         title="Your organization is the recipient or subrecipient of an individual FCDO contract of GBP 1 million or above, or two or more FCDO contracts with a combined value of GBP 5 million or above.">
+      </i>
+    </label>
+  </div>
 
+  
     <div class="form-check mb-2">
-    <input class="form-check-input radio-lg"
-             type="radio"
-             name="orgType"
-             id="nonUsOrg">
-      <label class="form-check-label" for="threshold3">
-        Threshold 3 <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
-       data-bs-toggle="tooltip"
-       data-bs-placement="top"
-       title="UEI is a unique identifier required for all organizations registered in SAM.">
-    </i>
-      </label>
-    </div>
+    <input class="form-check-input radio-lg" type="radio" name="orgType" id="threshold3">
+    <label class="form-check-label" for="threshold3">
+      Threshold 3
+      <i class="fa-solid fa-circle-question fa-xl ms-1 tooltip-icon"
+         data-bs-toggle="tooltip"
+         data-bs-placement="top"
+         title="Your organization is the recipient or subrecipient of an individual FCDO contract value below the EU Threshold.">
+      </i>
+    </label>
+  </div>
+
+
+
+  
   </div>
 </div>
 <!-- FCDO Identifications -->
@@ -365,7 +413,7 @@
   <!-- Label -->
   <label class="form-label mb-0" style="min-width: 250px;">
     FCDO Identifications<span class="text-danger">*</span>
-    <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
+    <i class="fa-sharp fa-solid fa-circle-question fa-xl" style="color: #1f7a5c;"
        data-bs-toggle="tooltip"
        data-bs-placement="top"
        title="UEI is a unique identifier required for all organizations registered in SAM.">
@@ -374,44 +422,41 @@
 
   <!-- Vertical Radios -->
   <div>
-    <div class="form-check mb-2">
-      <input class="form-check-input radio-lg"
-             type="checkbox"
-             name="orgType"
-             id="nonUsOrg">
-      
-        Small or medium-sized enterprise (SME) <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
-       data-bs-toggle="tooltip"
-       data-bs-placement="top"
-       title="UEI is a unique identifier required for all organizations registered in SAM.">
-    </i>
-        
-      </label>
-    </div>
+        <div class="form-check mb-2">
+    <input class="form-check-input radio-lg" type="checkbox" name="orgType">
+    <label class="form-check-label">
+      Small or medium-sized enterprise(SME)
+      <i class="fa-solid fa-circle-question fa-xl  tooltip-icon"
+         data-bs-toggle="tooltip"
+         data-bs-placement="top"
+         title="In order to qualify as an SME, an enterprise must have: a) fewer than 250 staff, and b) less than or equal to £44 million in annual turnover or a balance sheet total of less than or equal to £38 million.">
+      </i>
+    </label>
+  </div>
 
-    <div class="form-check mb-2">
-       <input class="form-check-input radio-lg"
-             type="checkbox"
-             name="orgType"
-             id="nonUsOrg">
-      
-       Women-owned business <i class="fa-sharp fa-solid fa-circle-question fa-lg" style="color: #1f7a5c;"
-       data-bs-toggle="tooltip"
-       data-bs-placement="top"
-       title="UEI is a unique identifier required for all organizations registered in SAM.">
-    </i>
-      </label>
-    </div>
+   <div>
+        <div class="form-check mb-2">
+    <input class="form-check-input radio-lg" type="checkbox" name="orgType">
+    <label class="form-check-label">
+      Women-owned business
+      <i class="fa-solid fa-circle-question fa-xl  tooltip-icon"
+         data-bs-toggle="tooltip"
+         data-bs-placement="top"
+         title="Generally, a business is considered women-owned if women hold at least 51% of the ownership or equity.">
+      </i>
+    </label>
+  </div>
+
 
     
   </div>
 
 </div>
+</div>
       <!-- Buttons -->
      <div class="text-center mt-4 d-flex justify-content-center gap-2">
- <a href="index.html" class="same-btn">Back</button></a> 
+ <a href="index.html" class="same-btn">Back</a> 
  <a href="Economicsanctions.html" class="same-btn">Save & Proceed</a>
-
 </div>
 
     </form>
@@ -419,23 +464,26 @@
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+
 <footer class="wcs-footer">
-  <div class="footer-content container mt-3">
-    <h4>Wildlife Conservation Society</h4>
-    <p>
-      WCS, the “W” logo, WE STAND FOR WILDLIFE, I STAND FOR WILDLIFE, and 
-      STAND FOR WILDLIFE are service marks of Wildlife Conservation Society.
-    </p>
+  <div class="container text-center py-3">
+    <div class="fw-semibold footer-title">Wildlife Conservation Society</div>
 
-    <hr class="my-0">
+    <div class="footer-text px-2">
+         WCS, the “W” logo, WE STAND FOR WILDLIFE, I STAND FOR WILDLIFE, and STAND FOR WILDLIFE are service marks of Wildlife Conservation Society.
 
-    <p class="copy">
-      ©2025 Wildlife Conservation Society
-    </p>
+    </div>
+
+    <div class="footer-divider mx-auto"></div>
+  </div>
+
+  <div class="wcs-footer-bottom text-center m-0">
+    <small class="m-0">©2025 Wildlife Conservation Society</small>
   </div>
 </footer>
 </div>
+
+ <script src="tooltip.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

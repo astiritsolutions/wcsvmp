@@ -28,7 +28,7 @@
 
     <div>
       <label class="text-white me-2">Change Language:</label>
-      <select class="form-select form-select-sm d-inline w-auto">
+      <select class="form-select form-select-sm d-inline language-select">
         <option>English</option>
         <option>French</option>
          <option>Spanish</option>
@@ -80,7 +80,7 @@
 
 <!-- ================= FORM CONTAINER (ONE SINGLE DIV) ================= -->
  <div class="content-scroll-area">
-<div class="container-fluid my-4">
+<div class="container-fluid my-3">
     <div class="form-card small-card">
   <div class="mb-4">
         <p>To comply with U.S. and international counter-terrorism laws, WCS must screen each subrecipient, along with its senior management (Chief Executive Officer/President, Chief Operating Officer, and Chief Financial Officer, or their equivalents) and key Officers of the Board of Directors/Trustees, if applicable (Chair, Vice-Chair, Secretary, Treasurer).</p>
@@ -95,18 +95,18 @@
     </div>
 
     <h6 class="section-title">Senior Management:</h6>
-<div class="senior-management-form-group">
-      <div class="senior-box">
+<div class="senior-management-form-group align-items-center">
+      <div class="senior-box align-items-center">
       
      
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-md-6 mb-4">
           <label class="form-label">First Name<span class="text-danger">*</span></label>
           <input type="text" class="form-control custom-input-width">
         </div>
 
         <div class="col-md-6 mb-4">
-          <label class="form-label">Middle Name</span></label>
+          <label class="form-label">Middle Name</label>
           <input type="text" class="form-control custom-input-width">
         </div>
       </div>
@@ -130,10 +130,20 @@
           <label class="form-label">Country of Citizenship<span class="text-danger">*</span></label>
           <select class="form-select custom-input-width">
             <option>--Select--</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
+         <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+           
+            <option>Bahamas</option>
+
+<option>Bangladesh</option>
+<option>Barbados</option>
+<option>Cabo Verde</option>
+<option>Cambodia</option>
+<option>Cameroon</option>
+<option>Denmark</option>
+
+<option>Germany</option>
 
           </select>
         </div>
@@ -151,6 +161,7 @@
     <!-- Label -->
     <h6> <label class="form-label my-4">
       Does your Organization have a Board of Directors/Trustees? <span class="text-danger">*</span>
+      
     </label></h6>
 
     <!-- US Radio -->
@@ -178,7 +189,15 @@
 
   </div>
   <h6> <label class="form-label my-2">
-      Board of Directors/Trustees Officers: <span class="text-danger">*</span>
+      Board of Directors/Trustees Officers:
+       <label class="form-check-label" for="threshold3">
+     
+      <i class="fa-solid fa-circle-question fa-xl tooltip-icon"
+         data-bs-toggle="tooltip"
+         data-bs-placement="top"
+         title="Please provide the names of the officers of your organization's Board of Directors or Trustees (e.g., Chair, Vice-Chair, Secretary, Treasurer). We are only seeking the names of individuals holding these key positions and do not require the names of all board members.">
+      </i>
+    </label>
     </label></h6>
 
 <div class="senior-management-form-group">
@@ -187,17 +206,17 @@
 
    
 </div>
-      <div class="senior-box">
+      <div class="senior-box ">
       
       
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-md-6 mb-4">
           <label class="form-label">First Name<span class="text-danger">*</span></label>
           <input type="text" class="form-control custom-input-width">
         </div>
 
         <div class="col-md-6 mb-4">
-          <label class="form-label">Middle Name</span></label>
+          <label class="form-label">Middle Name</label>
           <input type="text" class="form-control custom-input-width">
         </div>
       </div>
@@ -221,10 +240,20 @@
           <label class="form-label">Country of Citizenship<span class="text-danger">*</span></label>
           <select class="form-select custom-input-width">
             <option>--Select--</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
-            <option>Select</option>
+             <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+           
+            <option>Bahamas</option>
+
+<option>Bangladesh</option>
+<option>Barbados</option>
+<option>Cabo Verde</option>
+<option>Cambodia</option>
+<option>Cameroon</option>
+<option>Denmark</option>
+
+<option>Germany</option>
 
           </select>
         </div>
@@ -239,14 +268,12 @@
 
 
 
-     <div class="text-center mt-4 d-flex justify-content-center gap-2">
-  <a href="Orgnanizationalinfo.html"class="same-btn">
-Back
-</a>
-  <a href="bankinginformation.html" class="same-btn">Save & Proceed</button></a>
-</div>
+    <div class="text-center mt-4 d-flex justify-content-center gap-2">
+ <a href="Orgnanizationalinfo.html" class="same-btn">Back</a> 
+ <a href="bankinginformation.html" class="same-btn">Save & Proceed</a>
 
-    </form>
+</div>
+    
   </div>
 </div>
     </div>
@@ -254,23 +281,24 @@ Back
 
      
 
-<!-- ================= FOOTER ================= -->
 <footer class="wcs-footer">
-  <div class="footer-content mt-3">
-    <h4>Wildlife Conservation Society</h4>
-    <p>
-      WCS, the “W” logo, WE STAND FOR WILDLIFE, I STAND FOR WILDLIFE, and 
-      STAND FOR WILDLIFE are service marks of Wildlife Conservation Society.
-    </p>
+  <div class="container text-center py-3">
+    <div class="fw-semibold footer-title">Wildlife Conservation Society</div>
 
-    <hr class="my-0">
+    <div class="footer-text px-2">
+         WCS, the “W” logo, WE STAND FOR WILDLIFE, I STAND FOR WILDLIFE, and STAND FOR WILDLIFE are service marks of Wildlife Conservation Society.
 
-    <p class="copy">
-      ©2025 Wildlife Conservation Society
-    </p>
+    </div>
+
+    <div class="footer-divider mx-auto"></div>
+  </div>
+
+  <div class="wcs-footer-bottom text-center m-0">
+    <small class="m-0">©2025 Wildlife Conservation Society</small>
   </div>
 </footer>
 </div>
+ <script src="tooltip.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
