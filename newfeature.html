@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard (Bootstrap 5.3)</title>
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#1f3a7a;
+      --bg2:#23408a;
+
+      --shell:#f3f6fb;
+
+      --sidebar1:#18356f;
+      --sidebar2:#162f66;
+      --sidebarText:#cfe0ff;
+
+      --cardRadius:14px;
+      --shellRadius:28px;
+
+      --shadow:0 8px 24px rgba(0,0,0,.06);
+      --shadowShell:0 22px 70px rgba(0,0,0,.22);
+
+      --green:#19b394;
+      --red:#e25555;
+
+      --muted:#7a879a;
+      --title:#1d2b44;
+    }
+
+    body{
+      min-height:100vh;
+      background: radial-gradient(900px 420px at 60% 5%, rgba(255,255,255,.10), transparent 60%),
+                  linear-gradient(135deg, var(--bg1), var(--bg2));
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--title);
+    }
+
+    .app-shell{
+      max-width: 1420px;
+      margin: 42px auto;
+      border-radius: var(--shellRadius);
+      background: var(--shell);
+      box-shadow: var(--shadowShell);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .shell-inner{
+      display:flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 992px){
+      .shell-inner{
+        flex-direction: row;
+        min-height: calc(100vh - 84px);
+      }
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width: 260px;
+      background: linear-gradient(180deg, var(--sidebar1), var(--sidebar2));
+      padding: 22px 18px;
+      color: var(--sidebarText);
+    }
+
+    .sidebar .brand{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 8px 10px 18px;
+      margin-bottom: 6px;
+      opacity:.95;
+      font-weight: 700;
+      letter-spacing:.2px;
+    }
+
+    .side-nav .nav-link{
+      color: rgba(207,224,255,.92);
+      border-radius: 14px;
+      padding: 12px 14px;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      font-weight: 600;
+      line-height: 1;
+      margin: 4px 0;
+      transition: background .15s ease, color .15s ease;
+    }
+    .side-nav .nav-link i{
+      font-size: 1.05rem;
+      opacity: .95;
+    }
+    .side-nav .nav-link:hover{
+      background: rgba(255,255,255,.09);
+      color: #fff;
+    }
+    .side-nav .nav-link.active{
+      background: rgba(0,0,0,.18);
+      color: #fff;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+
+    .side-section{
+      margin-top: 16px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .side-section .label{
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      opacity: .72;
+      padding: 10px 14px 6px;
+      margin-bottom: 4px;
+    }
+
+    /* Offcanvas sidebar */
+    .offcanvas.sidebar-offcanvas{
+      background: linear-gradient(180deg, var(--sidebar1), var(--sidebar2));
+      color: var(--sidebarText);
+      width: 290px;
+    }
+    .sidebar-offcanvas .offcanvas-header{
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .sidebar-offcanvas .btn-close{
+      filter: invert(1) grayscale(1);
+      opacity: .9;
+    }
+
+    /* Main content */
+    .main-area{
+      flex: 1 1 auto;
+      padding: 28px 28px 34px;
+      min-width: 0;
+    }
+    @media (max-width: 991.98px){
+      .main-area{
+        padding: 18px 18px 22px;
+      }
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .title{
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .link-soft{
+      color: #4c66a8;
+      font-weight: 600;
+      text-decoration: none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+    .link-soft:hover{
+      background: rgba(76,102,168,.10);
+      color: #2f4f9a;
+    }
+
+    .card-soft{
+      border: 0;
+      border-radius: var(--cardRadius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card{
+      min-height: 118px;
+      padding: 14px 16px;
+    }
+    .stat-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .stat-icon{
+      width: 36px;
+      height: 36px;
+      display:grid;
+      place-items:center;
+      border-radius: 12px;
+      background: rgba(47,86,166,.10);
+      color: #2f56a6;
+      font-size: 1.1rem;
+    }
+    .stat-icon.orange{ background: rgba(255,140,65,.14); color:#ff7a2b; }
+    .stat-icon.gold{ background: rgba(255,193,65,.18); color:#f0a300; }
+    .stat-icon.green{ background: rgba(25,179,148,.14); color: var(--green); }
+
+    .pill-badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .pill-badge.green{ background: var(--green); }
+    .pill-badge.red{ background: #b42828; }
+    .pill-badge i{ font-size: .85rem; opacity: .95; }
+
+    .stat-number{
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: .2px;
+      margin: 0;
+    }
+    .stat-label{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .92rem;
+    }
+
+    /* Section headers */
+    .section-row{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 18px 0 12px;
+    }
+    .section-row .section-title{
+      font-weight: 800;
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .date-pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      color: #62708a;
+      font-weight: 700;
+      font-size: .86rem;
+      border: 1px solid rgba(18,38,78,.06);
+    }
+
+    .mini-link{
+      color: #5f75aa;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: .86rem;
+    }
+    .mini-link:hover{ text-decoration: underline; }
+
+    /* Charts */
+    .chart-wrap{
+      position: relative;
+      height: 270px;
+    }
+    .chart-wrap.tall{ height: 310px; }
+
+    .sales-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .sales-metrics{
+      display:flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .metric{
+      padding-right: 18px;
+      border-right: 1px solid rgba(18,38,78,.08);
+    }
+    .metric:last-child{
+      border-right: 0;
+      padding-right: 0;
+    }
+    .metric .value{
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: #2f56a6;
+      margin: 0;
+    }
+    .metric .sub{
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .86rem;
+    }
+
+    .select-soft{
+      border-radius: 12px;
+      border: 1px solid rgba(18,38,78,.10);
+      padding: 10px 12px;
+      font-weight: 700;
+      color: #6b7a92;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .chart-card-title{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .chart-card-title h6{
+      margin: 0;
+      font-weight: 900;
+      font-size: .98rem;
+    }
+
+    .legend{
+      margin-top: 10px;
+      display:grid;
+      gap: 10px;
+    }
+    .legend-row{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #6b7a92;
+      font-weight: 700;
+      font-size: .86rem;
+    }
+    .dot{
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      display:inline-block;
+      margin-right: 10px;
+    }
+
+    /* Right panel */
+    .right-panel{
+      width: 340px;
+      padding: 22px 22px 26px;
+      background: rgba(255,255,255,.42);
+      border-left: 1px solid rgba(18,38,78,.08);
+    }
+    @media (max-width: 991.98px){
+      .right-panel{
+        width: auto;
+        border-left: 0;
+        border-top: 1px solid rgba(18,38,78,.08);
+      }
+    }
+
+    .panel-title{
+      font-weight: 900;
+      font-size: 1.05rem;
+      margin: 6px 0 14px;
+    }
+
+    .tx-item{
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 12px 12px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .tx-left{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .avatar{
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: #d7dbe4;
+      flex: 0 0 auto;
+    }
+    .tx-name{
+      margin: 0;
+      font-weight: 900;
+      font-size: .92rem;
+      color: #2a3550;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tx-date{
+      margin: 0;
+      font-weight: 700;
+      font-size: .78rem;
+      color: #8593aa;
+    }
+    .amount{
+      font-weight: 900;
+      font-size: .95rem;
+      white-space: nowrap;
+    }
+    .amount.pos{ color: var(--green); }
+    .amount.neg{ color: var(--red); }
+
+    .btn-viewmore{
+      width: 100%;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 800;
+      border: 1px dashed rgba(18,38,78,.22);
+      background: rgba(255,255,255,.55);
+      color: #6b7a92;
+    }
+    .btn-viewmore:hover{
+      background: rgba(255,255,255,.9);
+      color: #3f4f6b;
+    }
+
+    .panel-head-row{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 18px;
+      margin-bottom: 12px;
+    }
+    .panel-head-row h6{
+      margin: 0;
+      font-weight: 900;
+      font-size: 1.02rem;
+    }
+
+    .activity{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .activity .box{
+      background:#fff;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 12px 12px;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .activity .when{
+      font-weight: 900;
+      color: #8a97ad;
+      font-size: .78rem;
+      padding-top: 6px;
+      white-space: nowrap;
+    }
+    .act-title{
+      margin: 0;
+      font-weight: 900;
+      font-size: .9rem;
+      color: #2a3550;
+    }
+    .act-sub{
+      margin: 2px 0 0;
+      font-weight: 700;
+      color: #8a97ad;
+      font-size: .82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dark-row{
+      background:#fff;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 10px 12px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .thumbs{
+      display:flex;
+      gap: 6px;
+      align-items:center;
+    }
+    .thumb{
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #e0e4ec;
+      border: 1px solid rgba(18,38,78,.08);
+    }
+    .dark-label{
+      font-weight: 900;
+      color: #586a86;
+      font-size: .86rem;
+      margin-left: 8px;
+      white-space: nowrap;
+    }
+
+    /* Spacing polish */
+    .gap-18{ gap: 18px; }
+
+    @media (max-width: 575.98px){
+      .app-shell{ margin: 18px 12px; border-radius: 22px; }
+      .pill-badge{ font-size: .72rem; }
+      .stat-number{ font-size: 1.55rem; }
+      .right-panel{ padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Offcanvas Sidebar (Mobile/Tablet) -->
+  <div class="offcanvas offcanvas-start sidebar-offcanvas d-lg-none" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-grid-1x2-fill"></i>
+        <strong id="sidebarOffcanvasLabel">Menu</strong>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3">
+      <nav class="side-nav nav flex-column">
+        <a class="nav-link active" href="#"><i class="bi bi-house-door"></i>Dashboard <span class="ms-auto opacity-75"><i class="bi bi-chevron-down"></i></span></a>
+        <a class="nav-link" href="#"><i class="bi bi-box-seam"></i>Menu Layout <span class="ms-auto opacity-75"><i class="bi bi-chevron-down"></i></span></a>
+        <a class="nav-link" href="#"><i class="bi bi-inbox"></i>Inbox</a>
+        <a class="nav-link" href="#"><i class="bi bi-folder2"></i>File Manager</a>
+        <a class="nav-link" href="#"><i class="bi bi-credit-card-2-front"></i>Point of Sale</a>
+        <a class="nav-link" href="#"><i class="bi bi-chat-left-text"></i>Chat</a>
+        <a class="nav-link" href="#"><i class="bi bi-stickies"></i>Post</a>
+        <a class="nav-link" href="#"><i class="bi bi-calendar3"></i>Calendar</a>
+
+        <div class="side-section">
+          <div class="label">Crud</div>
+          <a class="nav-link" href="#"><i class="bi bi-people"></i>Users</a>
+          <a class="nav-link" href="#"><i class="bi bi-person-badge"></i>Profile</a>
+          <a class="nav-link" href="#"><i class="bi bi-files"></i>Pages</a>
+        </div>
+
+        <div class="side-section">
+          <div class="label">Components</div>
+          <a class="nav-link" href="#"><i class="bi bi-puzzle"></i>Components</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <div class="shell-inner">
+      <!-- Desktop Sidebar -->
+      <aside class="sidebar d-none d-lg-flex flex-column">
+        <div class="brand">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </div>
+          <i class="bi bi-chevron-down opacity-75"></i>
+        </div>
+
+        <nav class="side-nav nav flex-column">
+          <a class="nav-link active" href="#"><i class="bi bi-house-door"></i>Dashboard <span class="ms-auto opacity-75"><i class="bi bi-chevron-down"></i></span></a>
+          <a class="nav-link" href="#"><i class="bi bi-box-seam"></i>Menu Layout <span class="ms-auto opacity-75"><i class="bi bi-chevron-down"></i></span></a>
+          <a class="nav-link" href="#"><i class="bi bi-inbox"></i>Inbox</a>
+          <a class="nav-link" href="#"><i class="bi bi-folder2"></i>File Manager</a>
+          <a class="nav-link" href="#"><i class="bi bi-credit-card-2-front"></i>Point of Sale</a>
+          <a class="nav-link" href="#"><i class="bi bi-chat-left-text"></i>Chat</a>
+          <a class="nav-link" href="#"><i class="bi bi-stickies"></i>Post</a>
+          <a class="nav-link" href="#"><i class="bi bi-calendar3"></i>Calendar</a>
+
+          <div class="side-section">
+            <div class="label">Crud</div>
+            <a class="nav-link" href="#"><i class="bi bi-people"></i>Users</a>
+            <a class="nav-link" href="#"><i class="bi bi-person-badge"></i>Profile</a>
+            <a class="nav-link" href="#"><i class="bi bi-files"></i>Pages</a>
+          </div>
+
+          <div class="side-section">
+            <div class="label">Components</div>
+            <a class="nav-link" href="#"><i class="bi bi-puzzle"></i>Components</a>
+          </div>
+        </nav>
+
+        <div class="mt-auto pt-3 opacity-75 small px-2">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-shield-check"></i>
+            <span>Secure Admin</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="main-area">
+        <!-- Top bar -->
+        <div class="topbar">
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-light border-0 shadow-sm d-lg-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarOffcanvas"
+              aria-controls="sidebarOffcanvas"
+              aria-label="Open menu">
+              <i class="bi bi-list fs-5"></i>
+            </button>
+            <h1 class="title">General Report</h1>
+          </div>
+
+          <a class="link-soft" href="#" role="button" aria-label="Reload data">
+            <i class="bi bi-arrow-clockwise"></i>
+            <span>Reload Data</span>
+          </a>
+        </div>
+
+        <!-- Stat cards -->
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card-soft stat-card">
+              <div class="stat-top">
+                <div class="stat-icon"><i class="bi bi-cart2"></i></div>
+                <span class="pill-badge green">33% <i class="bi bi-arrow-up"></i></span>
+              </div>
+              <p class="stat-number">4.710</p>
+              <p class="stat-label">Item Sales</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card-soft stat-card">
+              <div class="stat-top">
+                <div class="stat-icon orange"><i class="bi bi-credit-card"></i></div>
+                <span class="pill-badge red">2% <i class="bi bi-arrow-down"></i></span>
+              </div>
+              <p class="stat-number">3.721</p>
+              <p class="stat-label">New Orders</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card-soft stat-card">
+              <div class="stat-top">
+                <div class="stat-icon gold"><i class="bi bi-display"></i></div>
+                <span class="pill-badge green">12% <i class="bi bi-arrow-up"></i></span>
+              </div>
+              <p class="stat-number">2.149</p>
+              <p class="stat-label">Total Products</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card-soft stat-card">
+              <div class="stat-top">
+                <div class="stat-icon green"><i class="bi bi-person"></i></div>
+                <span class="pill-badge green">22% <i class="bi bi-arrow-up"></i></span>
+              </div>
+              <p class="stat-number">152.040</p>
+              <p class="stat-label">Unique Visitor</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sales Report header -->
+        <div class="section-row mt-4">
+          <h2 class="section-title">Sales Report</h2>
+          <div class="date-pill" aria-label="Date range">
+            <i class="bi bi-calendar3"></i>
+            <span>16 Jul, 2023 - 16 Aug, 2023</span>
+          </div>
+        </div>
+
+        <!-- Charts row -->
+        <div class="row g-3 align-items-stretch">
+          <!-- Line chart -->
+          <div class="col-12 col-lg-6">
+            <div class="card card-soft p-3 h-100">
+              <div class="sales-head">
+                <div class="sales-metrics">
+                  <div class="metric">
+                    <p class="value">$15,000</p>
+                    <p class="sub">This Month</p>
+                  </div>
+                  <div class="metric">
+                    <p class="value" style="color:#7484a6">$10,000</p>
+                    <p class="sub">Last Month</p>
+                  </div>
+                </div>
+                <select class="form-select select-soft" aria-label="Filter by Category">
+                  <option selected>Filter by Category</option>
+                  <option>All</option>
+                  <option>Electronics</option>
+                  <option>Fashion</option>
+                  <option>Groceries</option>
+                </select>
+              </div>
+
+              <div class="chart-wrap tall">
+                <canvas id="salesLine" aria-label="Sales line chart" role="img"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pie chart -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card card-soft p-3 h-100">
+              <div class="chart-card-title">
+                <h6>Weekly Top Seller</h6>
+                <a class="mini-link" href="#">Show More</a>
+              </div>
+
+              <div class="chart-wrap">
+                <canvas id="topSellerPie" aria-label="Weekly top seller pie chart" role="img"></canvas>
+              </div>
+
+              <div class="legend" aria-label="Legend">
+                <div class="legend-row">
+                  <span><span class="dot" style="background:#2f56a6"></span>17 - 30 Years old</span>
+                  <span>62%</span>
+                </div>
+                <div class="legend-row">
+                  <span><span class="dot" style="background:#ff7a2b"></span>31 - 50 Years old</span>
+                  <span>33%</span>
+                </div>
+                <div class="legend-row">
+                  <span><span class="dot" style="background:#f0a300"></span>&gt;= 50 Years old</span>
+                  <span>10%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Donut chart -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card card-soft p-3 h-100">
+              <div class="chart-card-title">
+                <h6>Sales Report</h6>
+                <a class="mini-link" href="#">Show More</a>
+              </div>
+
+              <div class="chart-wrap">
+                <canvas id="salesDonut" aria-label="Sales donut chart" role="img"></canvas>
+              </div>
+
+              <div class="legend" aria-label="Legend">
+                <div class="legend-row">
+                  <span><span class="dot" style="background:#2f56a6"></span>17 - 30 Years old</span>
+                  <span>62%</span>
+                </div>
+                <div class="legend-row">
+                  <span><span class="dot" style="background:#ff7a2b"></span>31 - 50 Years old</span>
+                  <span>33%</span>
+                </div>
+                <div class="legend-row">
+                  <span><span class="dot" style="background:#f0a300"></span>&gt;= 50 Years old</span>
+                  <span>10%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom spacing to resemble screenshot -->
+        <div class="mt-4 d-none d-lg-block" style="height: 6px;"></div>
+      </main>
+
+      <!-- Right Panel -->
+      <aside class="right-panel">
+        <div class="d-flex align-items-center justify-content-between gap-2">
+          <h3 class="panel-title">Transactions</h3>
+        </div>
+
+        <div class="tx-item">
+          <div class="tx-left">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="min-w-0">
+              <p class="tx-name">John Travolta</p>
+              <p class="tx-date">1 November 2021</p>
+            </div>
+          </div>
+          <div class="amount neg">-$24</div>
+        </div>
+
+        <div class="tx-item">
+          <div class="tx-left">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="min-w-0">
+              <p class="tx-name">Morgan Freeman</p>
+              <p class="tx-date">21 August 2022</p>
+            </div>
+          </div>
+          <div class="amount pos">+$195</div>
+        </div>
+
+        <div class="tx-item">
+          <div class="tx-left">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="min-w-0">
+              <p class="tx-name">Angelina Jolie</p>
+              <p class="tx-date">29 April 2022</p>
+            </div>
+          </div>
+          <div class="amount pos">+$31</div>
+        </div>
+
+        <div class="tx-item">
+          <div class="tx-left">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="min-w-0">
+              <p class="tx-name">John Travolta</p>
+              <p class="tx-date">8 January 2022</p>
+            </div>
+          </div>
+          <div class="amount neg">-$38</div>
+        </div>
+
+        <div class="tx-item">
+          <div class="tx-left">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="min-w-0">
+              <p class="tx-name">Arnold Schwarzenegger</p>
+              <p class="tx-date">13 June 2021</p>
+            </div>
+          </div>
+          <div class="amount pos">+$50</div>
+        </div>
+
+        <button class="btn btn-viewmore" type="button">View More</button>
+
+        <div class="panel-head-row">
+          <h6>Recent Activities</h6>
+          <a class="mini-link" href="#">Show More</a>
+        </div>
+
+        <div class="activity">
+          <div class="box">
+            <div class="avatar" style="width:40px;height:40px" aria-hidden="true"></div>
+            <div class="min-w-0">
+              <p class="act-title">Brad Pitt</p>
+              <p class="act-sub">Has joined the team</p>
+            </div>
+          </div>
+          <div class="when">07:00 PM</div>
+        </div>
+
+        <div class="activity">
+          <div class="box">
+            <div class="avatar" style="width:40px;height:40px" aria-hidden="true"></div>
+            <div class="min-w-0">
+              <p class="act-title">Brad Pitt</p>
+              <p class="act-sub">Added 3 new photos</p>
+              <div class="thumbs mt-2">
+                <div class="thumb" aria-hidden="true"></div>
+                <div class="thumb" aria-hidden="true"></div>
+                <div class="thumb" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+          <div class="when">07:00 PM</div>
+        </div>
+
+        <div class="dark-row mt-2">
+          <div class="d-flex align-items-center">
+            <div class="thumbs">
+              <div class="thumb" aria-hidden="true"></div>
+              <div class="thumb" aria-hidden="true"></div>
+              <div class="thumb" aria-hidden="true"></div>
+            </div>
+            <span class="dark-label">Dark Mode</span>
+          </div>
+
+          <div class="form-check form-switch m-0">
+            <input class="form-check-input" type="checkbox" role="switch" id="darkModeSwitch" aria-label="Dark mode toggle (UI only)">
+          </div>
+        </div>
+
+        <div class="text-center mt-3 small" style="color:#8a97ad;font-weight:800;">12 November</div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <script>
+    // Global Chart.js defaults for a clean dashboard feel
+    Chart.defaults.font.family = 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial';
+    Chart.defaults.color = '#7a879a';
+
+    // Line chart (Sales Report)
+    const salesLine = new Chart(document.getElementById('salesLine'), {
+      type: 'line',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        datasets: [
+          {
+            label: 'This Month',
+            data: [120, 260, 280, 240, 560, 470, 620, 980, 920, 1050, 900, 1120],
+            borderColor: '#2f56a6',
+            backgroundColor: 'rgba(47,86,166,.10)',
+            borderWidth: 3,
+            tension: .38,
+            pointRadius: 0
+          },
+          {
+            label: 'Last Month',
+            data: [80, 200, 360, 420, 320, 520, 460, 740, 680, 760, 980, 1020],
+            borderColor: 'rgba(47,86,166,.45)',
+            borderWidth: 2,
+            borderDash: [4,4],
+            tension: .38,
+            pointRadius: 0
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { mode: 'index', intersect: false }
+        },
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { font: { weight: 700 } }
+          },
+          y: {
+            beginAtZero: true,
+            suggestedMax: 1200,
+            grid: { color: 'rgba(0,0,0,.06)' },
+            ticks: {
+              font: { weight: 700 },
+              callback: (v) => '$' + v
+            }
+          }
+        }
+      }
+    });
+
+    // Pie chart (Weekly Top Seller)
+    const topSellerPie = new Chart(document.getElementById('topSellerPie'), {
+      type: 'pie',
+      data: {
+        labels: ['17 - 30 Years old','31 - 50 Years old','>= 50 Years old'],
+        datasets: [{
+          data: [62, 33, 10],
+          backgroundColor: ['#2f56a6', '#ff7a2b', '#f0a300'],
+          borderColor: '#ffffff',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    // Donut chart (Sales Report)
+    const salesDonut = new Chart(document.getElementById('salesDonut'), {
+      type: 'doughnut',
+      data: {
+        labels: ['17 - 30 Years old','31 - 50 Years old','>= 50 Years old'],
+        datasets: [{
+          data: [62, 33, 10],
+          backgroundColor: ['#2f56a6', '#ff7a2b', '#f0a300'],
+          borderColor: '#ffffff',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '74%',
+        plugins: { legend: { display: false } }
+      }
+    });
+  </script>
+</body>
+</html>
