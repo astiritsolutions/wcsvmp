@@ -4,12 +4,13 @@
 
 
 .body_organizationalinfo{
-  background-image: url("../images/Watermarks/subrecipient_organizationalinformation.jpg"); /* Your watermark image */
+  background-image: url("../images/Watermarks/Lion-Watermark.jpg"); /* Your watermark image */
   background-repeat: no-repeat;
   background-position: center;
  background-size: 100%;
  background-position: center 120px;  
   background-attachment: fixed;
+  font-family:'Calibri';
   font-size: 14px;
   
   
@@ -26,18 +27,21 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   
+  
 
   /* prevents footer getting "cut" on mobile browsers */
   
   
 }
 .body_economicsanctions{
-    background-image: url("../images/Watermarks/subrecipient_Economicsanctions.jpg"); /* Your watermark image */
+  background-image: url("../images/Watermarks/Bear-Watermark.jpg");
+  /* Your watermark image */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   background-position: center 120px;      /* adjust watermark size */
   background-attachment: fixed;
+  font-family:'Calibri';
   font-size: 14px;
 }
 .body_economicsanctions{
@@ -46,13 +50,16 @@
   overflow: hidden;   /* 🔑 disables full page scroll */
 }
 .body_bankinginformation{
-    background-image: url("../images/Watermarks/subrecipient_bankinginformation.jpg"); /* Your watermark image */
+    background-image: url("../images/Watermarks/Stingray-Watermark.jpg"); /* Your watermark image */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   background-position: center 120px;      /* adjust watermark size */
   background-attachment: fixed;
+  font-family:'Calibri';
     font-size: 14px;
+
+    
 }
 .body_bankinginformation{             
   height: 100%;
@@ -60,12 +67,13 @@
   overflow: hidden;   /* 🔑 disables full page scroll */
 }
 .body_thankyou{
-  background-image: url("../images/Watermarks/subrecipient_successpage.jpg"); /* Your watermark image */
+  background-image: url("../images/Watermarks/Tiger-Watermark.jpg"); /* Your watermark image */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   background-position: center 120px;      /* adjust watermark size */
   background-attachment: fixed;
+  font-family:'Calibri';
   font-size: 14px;
 }
 .body_thankyou{             
@@ -73,9 +81,17 @@
   margin: 0;
   
 }
+.body-full-scroll{
+  font-size: 15px;
+  font-family: calibri;
+}
 
 
-
+.org{
+  font-size: 15px;
+ 
+  font-weight: bold;
+}
 
 /* ================= HERO ================= */
 .hero-section {
@@ -189,7 +205,7 @@
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 6px;
-  color: #f3e9da;
+  color: #ffeed4;
 }
 
 .hero-center h1 {
@@ -198,19 +214,30 @@
 }
 
 .hero-desc {
-  max-width: 520px;
-  font-size: 14px;
+ 
+  font-size: 16px;
 }
+
 /* ================= ABOUT SECTION ================= */
 .about-section {
   background-color: #fff;
 }
 
+
 /* Green content block */
 .about-content {
-  background-color: #198754;
+  background-color: #1f7a5c;;
 }
-
+.btn-upload{
+  background-color: #1f7a5c; /* Blue */
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  height: 30px;
+}
 /* Text tuning */
 .about-content p {
   font-size: 16px;
@@ -263,9 +290,108 @@
     font-size: 14px;
   }
 }
+   :root{
+      --green:#227A57;
+      --green-weak: #198754;
+      --text:#000000;
+      --muted:#6c757d;
+      
+   }
+.wizard-strip .container-fluid{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.wizard-strip{
+      
+     width: 100%;
+     
+    }
 
+    /* Wizard */
+    .wizard{
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      list-style: none;
+      margin: 0;
+      padding: 0 4px;
+     
+    
+    }
 
+    /* connecting line */
+    .wizard::before{
+      content:"";
+      position:absolute;
+      left: 0%;
+      right: 0%;
+      top: 14px;                 /* aligns with circle center */
+      height: 2px;
+      background: var(--green-weak);
+      z-index: 0;
+      
+    }
 
+    .wizard-step{
+      position: relative;
+      z-index: 1;
+      flex: 1 1 0;
+      min-width: 0;              /* allows text wrap */
+      text-align: center;
+      
+      
+    }
+
+    .wizard-link{
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--text);
+      outline: none;
+    }
+
+    .wizard-circle{
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 12px;
+      background: #fff;
+      border: 2px solid var(--green);
+      color: var(--text);
+      box-shadow: 0 2px 0 rgba(0,0,0,.06);
+    }
+
+    .wizard-label{
+      font-size: 13px;
+      line-height: 1.15;
+      max-width: 240px;
+      word-break: break-word;
+    }
+
+    /* states */
+    .wizard-step.is-active .wizard-circle{
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+    }
+    .wizard-step.is-active .wizard-label{
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .wizard-step.is-done .wizard-circle{
+      background: #fff;
+      color: var(--green);
+      
+    }
 
 
 /* Circular Steps Styling */
@@ -284,15 +410,21 @@
 
         .step-line {
             position: relative;
+           
         }
          
+
+        
 
 /* ================= MISSION GAP FIX ================= */
 .image_gap {
   row-gap: 3rem;
   column-gap: 3rem;
 }
+.dropdown_text{
+  font-size: 14px;
 
+}
 
 
 /* ================= MOBILE ================= */
@@ -424,12 +556,14 @@
 
 .header-image {
   z-index: 1030;
-  overflow: hidden;              /* important for cropping */
+  overflow: hidden;   
+            /* important for cropping */
 }
+
 
 /* Desktop/Tablet (normal) */
 .header-image img {
-  height: 150px;
+  
   width: 100%;
   object-fit: cover;
   object-position: center;
@@ -453,7 +587,17 @@
   z-index: 1025;
 }
 
-
+.hero-btn{
+  background-color: #1f7a5c; /* Blue */
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 /* --------------Wizard Style Start------------ */
 
@@ -901,9 +1045,18 @@
   max-width: 1100px;   /* responsive width */
   width: 100%;         /* uses available screen space */
   margin: auto;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
+.form-card-thankyou {
+  background: rgba(255, 255, 255, 0.30);
+  padding: 120px;
+  border-radius: 12px;
+  max-width: 1100px;   /* responsive width */
+  width: 100%;         /* uses available screen space */
+  margin: auto;
+  height: 480px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 /* REMOVE fixed-width card */
 .small-card {
   width: 100% !important;
@@ -937,7 +1090,7 @@
   background-color: #1f7a5c; /* Blue */
   color: #fff;
   border: none;
-  padding: 8px 20px;
+  padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
   width: 200px;
@@ -945,7 +1098,6 @@
   text-decoration: none;
   
 }
-
 
 .wcs-footer {
   background-color: #1e6b4e;
@@ -961,7 +1113,7 @@
 
 /* Title */
 .wcs-footer .footer-title{
-  font-size: 15px;      /* increased */
+  font-size: 16px;      /* increased */
   line-height: 1.2;
   margin-bottom: 6px;
 }
@@ -1129,7 +1281,7 @@
 
 
 .content-scroll-area {
-  height: calc(100vh - 300px); /* desktop hero */
+  height: calc(100vh - 267px); /* desktop hero */
   overflow-y: auto;
   overflow-x: hidden;
 }

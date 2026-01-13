@@ -20,7 +20,7 @@
 <!-- ================= HEADER IMAGE (STICKY) ================= -->
 
 <div class="header-image sticky-top">
-  <img src="assets/images/Headers/Sub_Elctronic Banking.jpg" class="w-100" alt="Header Image">
+  <img src="assets/images/Headers/Bear_Header.jpg" class="w-100" alt="Header Image">
   <!-- ================= NAVBAR (STICKY) ================= -->
 <div class="custom-navbar sticky-top">
   <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -38,49 +38,48 @@
 </div>
 
 <!-- ------------------Wizard----------------------- -->
-<div class="container-fluid py-5">
-  <div class="wizard-line-e">
+<div class="wizard-strip py-4">
+    <div class="container-fluid w-100">
 
-    <!-- Icon 1 -->
-    <div class="wizard-icon start">
-      <i class="fa-sharp fa-solid fa-building fa-xl" style="color: #ffffff;"></i>
-    </div>
+      <nav aria-label="Wizard Progress">
+        <ol class="wizard">
 
-    <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text-e between-1-2-e fw-bold">
-      Organizational Information
-    </div>
+          <!-- Step 1 (active like screenshot left) -->
+          <li class="wizard-step">
+            <a class="wizard-link" href="#" aria-current="step">
+              <span class="wizard-circle">1</span>
+              <span class="wizard-label">Organizational Information</span>
+            </a>
+          </li>
 
-    <!-- Icon 2 -->
-    <div class="wizard-icon middle-e">
-     <i class="fa-solid fa-gavel fa-xl" style="color: #ffffff;"></i>
-    </div>
-    <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text between-2-3-e fw-bold">
-      Economic Sanctions - Counter Terrorism
-    </div>
+          <!-- Step 2 -->
+          <li class="wizard-step is-active">
+            <a class="wizard-link" href="#">
+              <span class="wizard-circle">2</span>
+              <span class="wizard-label">Economic Sanctions - Counter Terrorism</span>
+            </a>
+          </li>
 
-    <!-- Icon 3 -->
-    <div class="wizard-icon end">
-   <i class="fa-solid fa-building-columns fa-xl" style="color: #000000;"></i>
-    </div>
-     <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text between-3-0-e">
-     Electronic Banking Information
-    </div>
+          <!-- Step 3 -->
+          <li class="wizard-step">
+            <a class="wizard-link" href="#">
+              <span class="wizard-circle">3</span>
+              <span class="wizard-label">Electronic Banking Information</span>
+            </a>
+          </li>
 
+        </ol>
+      </nav>
 
+    </div>
   </div>
 </div>
-
-</div>
-
 
 
 
 <!-- ================= FORM CONTAINER (ONE SINGLE DIV) ================= -->
  <div class="content-scroll-area">
-<div class="container-fluid my-3">
+<div class="container-fluid mt-1 mb-4">
     <div class="form-card small-card">
   <div class="mb-4">
         <p>To comply with U.S. and international counter-terrorism laws, WCS must screen each subrecipient, along with its senior management (Chief Executive Officer/President, Chief Operating Officer, and Chief Financial Officer, or their equivalents) and key Officers of the Board of Directors/Trustees, if applicable (Chair, Vice-Chair, Secretary, Treasurer).</p>
@@ -94,7 +93,7 @@
         <p>Questions? Contact <a href="#" class="fw-bold">SCPortalSupport@wcs.org</a></p>
     </div>
 
-    <h6 class="section-title">Senior Management:</h6>
+    <p class="section-title org ">Senior Management:</p>
 <div class="senior-management-form-group align-items-center">
       <div class="senior-box align-items-center">
       
@@ -102,23 +101,23 @@
       <div class="row align-items-center">
         <div class="col-md-6 mb-4">
           <label class="form-label">First Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Middle Name</label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Last Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Title<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
       
@@ -128,22 +127,21 @@
         <div class="col-md-6 mb-4">
           
           <label class="form-label">Country of Citizenship<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-         <option>Afghanistan</option>
-            <option>Albania</option>
-            <option>Algeria</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+         <option class="dropdown_text">Afghanistan</option>
+            <option class="dropdown_text">Albania</option>
+            <option class="dropdown_text">Algeria</option>
            
-            <option>Bahamas</option>
+            <option class="dropdown_text">Bahamas</option>
 
-<option>Bangladesh</option>
-<option>Barbados</option>
-<option>Cabo Verde</option>
-<option>Cambodia</option>
-<option>Cameroon</option>
-<option>Denmark</option>
-
-<option>Germany</option>
+<option class="dropdown_text">Bangladesh</option>
+<option class="dropdown_text">Barbados</option>
+<option class="dropdown_text">Cabo Verde</option>
+<option class="dropdown_text">Cambodia</option>
+<option class="dropdown_text">Cameroon</option>
+<option class="dropdown_text">Denmark</option>
+<option class="dropdown_text">Germany</option>
 
           </select>
         </div>
@@ -156,16 +154,16 @@
 <button type="button" class="btn btn-sm btn-success mt-3">Add More+</button>
     
 
-<div class="d-flex align-items-center gap-4 flex-wrap">
+<div class="d-flex align-items-center gap-4 flex-wrap mt-2">
 
     <!-- Label -->
-    <h6> <label class="form-label my-4">
+    <p class="mb-0 mb-2"> <label class="form-label mb-2 mt-2 org">
       Does your Organization have a Board of Directors/Trustees? <span class="text-danger">*</span>
       
-    </label></h6>
+    </label></p>
 
     <!-- US Radio -->
-    <div class="form-check form-check-inline mb-0">
+    <div class="form-check form-check-inline mb-2 ">
       <input class="form-check-input radio-lg"
              type="radio"
              name="orgType"
@@ -176,7 +174,7 @@
     </div>
 
     <!-- Non-US Radio -->
-    <div class="form-check form-check-inline mb-0">
+    <div class="form-check form-check-inline mb-2">
       <input class="form-check-input radio-lg"
              type="radio"
              name="orgType"
@@ -188,20 +186,20 @@
 
 
   </div>
-  <h6> <label class="form-label my-2">
+  <p> <label class="form-label org mb-0">
       Board of Directors/Trustees Officers:
-       <label class="form-check-label" for="threshold3">
+       <label class="form-check-label" for="BOD">
      
-      <i class="fa-solid fa-circle-question fa-xl tooltip-icon"
+     <i class="fa-solid fa-circle-question fa-xl  tooltip-icon"
          data-bs-toggle="tooltip"
          data-bs-placement="top"
-         title="Please provide the names of the officers of your organization's Board of Directors or Trustees (e.g., Chair, Vice-Chair, Secretary, Treasurer). We are only seeking the names of individuals holding these key positions and do not require the names of all board members.">
+         title="Generally, a business is considered women-owned if women hold at least 51% of the ownership or equity.">
       </i>
     </label>
-    </label></h6>
+    </label></p>
 
 <div class="senior-management-form-group">
-   <div class="mb-4">
+   <div class="mb-3">
   <div class="d-flex align-items-center gap-4 flex-wrap">
 
    
@@ -212,23 +210,23 @@
       <div class="row align-items-center">
         <div class="col-md-6 mb-4">
           <label class="form-label">First Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Middle Name</label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Last Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Title<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
       
@@ -238,22 +236,21 @@
         <div class="col-md-6 mb-4">
           
           <label class="form-label">Country of Citizenship<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-             <option>Afghanistan</option>
-            <option>Albania</option>
-            <option>Algeria</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+             <option class="dropdown_text">Afghanistan</option>
+            <option class="dropdown_text">Albania</option>
+            <option class="dropdown_text">Algeria</option>
            
-            <option>Bahamas</option>
+            <option class="dropdown_text">Bahamas</option>
 
-<option>Bangladesh</option>
-<option>Barbados</option>
-<option>Cabo Verde</option>
-<option>Cambodia</option>
-<option>Cameroon</option>
-<option>Denmark</option>
-
-<option>Germany</option>
+<option class="dropdown_text">Bangladesh</option>
+<option class="dropdown_text">Barbados</option>
+<option class="dropdown_text">Cabo Verde</option>
+<option class="dropdown_text">Cambodia</option>
+<option class="dropdown_text">Cameroon</option>
+<option class="dropdown_text">Denmark</option>
+<option class="dropdown_text">Germany</option>
 
           </select>
         </div>
@@ -263,7 +260,7 @@
          </div>
         </div>
 
-<button type="button" class="btn btn-sm btn-success">Add More+</button>   
+<button type="button" class="btn btn-sm btn-success ">Add More+</button>   
 
 
 
@@ -286,19 +283,15 @@
     <div class="fw-semibold footer-title">Wildlife Conservation Society</div>
 
     <div class="footer-text px-2">
-         WCS, the “W” logo, WE STAND FOR WILDLIFE, I STAND FOR WILDLIFE, and STAND FOR WILDLIFE are service marks of Wildlife Conservation Society.
-
+        
+        <span>2300 Southern Boulevard Bronx, New York 10460</span>
     </div>
 
-    <div class="footer-divider mx-auto"></div>
   </div>
 
-  <div class="wcs-footer-bottom text-center m-0">
-    <small class="m-0">©2025 Wildlife Conservation Society</small>
-  </div>
 </footer>
 </div>
- <script src="tooltip.js"></script>
+ <script src="assets/js/tooltip.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

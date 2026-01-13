@@ -19,7 +19,7 @@
 
 <!-- ================= HEADER IMAGE (STICKY) ================= -->
 <div class="header-image sticky-top">
-  <img src="assets/images/Headers/Sub_Organizational Behavior.jpg" class="w-100" alt="Header Image">
+  <img src="assets/images/Headers/Lion_Header.jpg" alt="Header Image">
 
   <!-- ================= NAVBAR (STICKY) ================= -->
 <div class="custom-navbar">
@@ -36,54 +36,54 @@
     </div>
   </div>
 </div>
-
+</div>
 <!-- ------------------Wizard----------------------- -->
-<div class="container-fluid py-5 sticky-top">
-  <div class="wizard-line">
+<div class="wizard-strip py-4">
+    <div class="container-fluid w-100">
 
-    <!-- Icon 1 -->
-    <div class="wizard-icon start">
-      <i class="fa-sharp fa-solid fa-building fa-sm" style="color: #ffffff;"></i>
-    </div>
+      <nav aria-label="Wizard Progress">
+        <ol class="wizard">
 
-    <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text between-1-2 fw-bold">
-      Organizational Information
-    </div>
+          <!-- Step 1 (active like screenshot left) -->
+          <li class="wizard-step is-active">
+            <a class="wizard-link" href="#" aria-current="step">
+              <span class="wizard-circle">1</span>
+              <span class="wizard-label">Organizational Information</span>
+            </a>
+          </li>
 
-    <!-- Icon 2 -->
-    <div class="wizard-icon middle">
-     <i class="fa-solid fa-gavel fa-sm" style="color: #000000;"></i>
-    </div>
-    <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text between-2-3">
-      Economic Sanctions - Counter Terrorism
-    </div>
+          <!-- Step 2 -->
+          <li class="wizard-step">
+            <a class="wizard-link" href="#">
+              <span class="wizard-circle">2</span>
+              <span class="wizard-label">Economic Sanctions - Counter Terrorism</span>
+            </a>
+          </li>
 
-    <!-- Icon 3 -->
-    <div class="wizard-icon end">
-   <i class="fa-solid fa-building-columns fa-sm" style="color: #000000;"></i>
-    </div>
-     <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text between-3-0">
-     Electronic Banking Information
-    </div>
+          <!-- Step 3 -->
+          <li class="wizard-step">
+            <a class="wizard-link" href="#">
+              <span class="wizard-circle">3</span>
+              <span class="wizard-label">Electronic Banking Information</span>
+            </a>
+          </li>
 
+        </ol>
+      </nav>
 
+    </div>
   </div>
-</div>
-<!-- --------------------Wizard End--------------------- -->
-</div>
+
 
 
 
 <!-- ================= FORM CONTAINER (ONE SINGLE DIV) ================= -->
 <div class="content-scroll-area">
-<div class="container-fluid my-3">
+<div class="container-fluid mt-1 mb-4">
 
   <div class="form-card small-card">
 
-    <h6 class="mb-4 org">Organizational Information</h6>
+    <p class="mb-4 org">Organizational Information</p>
 
     <form>
 
@@ -124,12 +124,12 @@
       <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Organizational Legal Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Organization Alias</label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
@@ -137,22 +137,22 @@
       <div class="row">
       <div class="col-md-6 mb-4">
         <label class="form-label">Organization Website</label>
-        <input type="url" class="form-control custom-input-width">
+        <input type="url" class="form-control custom-input-width dropdown_text">
       </div>
       </div>
 
       <!-- Address -->
-      <h6 class="mt-4 mb-4">Organizational Headquarter Address</h6>
+      <p class="mt-2 mb-4 org">Organizational Headquarter Address</p>
 
       <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Address Line 1<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Address Line 2</label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
@@ -160,27 +160,27 @@
 <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">City<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Country<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-            <option>Afghanistan</option>
-            <option>Albania</option>
-            <option>Algeria</option>
-            <option>Andorra</option>
-            <option>Bahamas</option>
-<option>Bahrain</option>
-<option>Bangladesh</option>
-<option>Barbados</option>
-<option>Cabo Verde</option>
-<option>Cambodia</option>
-<option>Cameroon</option>
-<option>Denmark</option>
-<option>Djibouti</option>
-<option>Germany</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+            <option class="dropdown_text">Afghanistan</option>
+            <option class="dropdown_text">Albania</option>
+            <option class="dropdown_text">Algeria</option>
+            <option class="dropdown_text">Andorra</option>
+            <option class="dropdown_text">Bahamas</option>
+<option class="dropdown_text">Bahrain</option>
+<option class="dropdown_text">Bangladesh</option>
+<option class="dropdown_text">Barbados</option>
+<option class="dropdown_text">Cabo Verde</option>
+<option class="dropdown_text">Cambodia</option>
+<option class="dropdown_text">Cameroon</option>
+<option class="dropdown_text">Denmark</option>
+<option class="dropdown_text">Djibouti</option>
+<option class="dropdown_text">Germany</option>
  
 
           </select>
@@ -193,26 +193,26 @@
         <div class="col-md-6 mb-4">
           
           <label class="form-label">State<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-           <option>Kabul</option>
-<option>Herat</option>
-<option>Kandahar</option>
-<option>Tirana</option>
-<option>Durres</option>
-<option>Vlore</option>
-<option>Andorra la Vella</option>
-<option>Escaldes-Engordany</option>
-<option>Encamp</option>
-<option>New Providence</option>
-<option>Grand Bahama</option>
-<option>Abaco</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+           <option class="dropdown_text">Kabul</option>
+<option class="dropdown_text">Herat</option>
+<option class="dropdown_text">Kandahar</option>
+<option class="dropdown_text">Tirana</option>
+<option class="dropdown_text">Durres</option>
+<option class="dropdown_text">Vlore</option>
+<option class="dropdown_text">Andorra la Vella</option>
+<option class="dropdown_text">Escaldes-Engordany</option>
+<option class="dropdown_text">Encamp</option>
+<option class="dropdown_text">New Providence</option>
+<option class="dropdown_text">Grand Bahama</option>
+<option class="dropdown_text">Abaco</option>
           </select>
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Zip/Country Code<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
@@ -221,14 +221,14 @@
       <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Organizational Tax Status<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-            <option>Recognized as tax-exempt by IRS as a 501(c)(3)</option>
-            <option>Recognized as tax-exempt under other IRS Tax Code</option>
-            <option>Recognized as non-taxable under a Non-US Country Tax Code</option>
-            <option>US for-profit(taxable)</option>
-                        <option>Non-US for-profit(taxable)</option>
-                                    <option>Other</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+            <option class="dropdown_text">Recognized as tax-exempt by IRS as a 501(c)(3)</option>
+            <option class="dropdown_text">Recognized as tax-exempt under other IRS Tax Code</option>
+            <option class="dropdown_text">Recognized as non-taxable under a Non-US Country Tax Code</option>
+            <option class="dropdown_text">US for-profit(taxable)</option>
+                        <option class="dropdown_text">Non-US for-profit(taxable)</option>
+                                    <option class="dropdown_text">Other</option>
           </select>
         </div>
 
@@ -236,8 +236,8 @@
   <label class="form-label">Evidence of Tax Status</label>
 
   <div class="d-flex gap-2">
-    <input type="file" class="form-control custom-input-width">
-    <button class="btn btn-success">Upload</button>
+    <input type="file" class="form-control custom-input-width dropdown_text">
+    <button class="btn-upload">Upload</button>
   </div>
 </div>
       </div>
@@ -246,15 +246,15 @@
       <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Federal Tax Identification/Employer Identification Number (EIN)<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-4 mb-4">
   <label class="form-label">Evidence of the Organization's Legal Status</label>
 
   <div class="d-flex gap-2">
-    <input type="file" class="form-control custom-input-width">
-    <button class="btn btn-success">Upload</button>
+    <input type="file" class="form-control custom-input-width dropdown_text">
+    <button class="btn-upload">Upload</button>
   </div>
 </div>
       </div>
@@ -266,23 +266,22 @@
         <div class="col-md-6 mb-4">
           
           <label class="form-label">State or Country of Establishment, Incorporation or, Registration</label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-            <option>Afghanistan</option>
-            <option>Albania</option>
-            <option>Algeria</option>
-            <option>Andorra</option>
-            <option>Bahamas</option>
-<option>Bahrain</option>
-<option>Bangladesh</option>
-<option>Barbados</option>
-<option>Cabo Verde</option>
-<option>Cambodia</option>
-<option>Cameroon</option>
-<option>Denmark</option>
-<option>Djibouti</option>
-<option>Germany</option>
-
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+            <option class="dropdown_text">Afghanistan</option>
+            <option class="dropdown_text">Albania</option>
+            <option class="dropdown_text">Algeria</option>
+            <option class="dropdown_text">Andorra</option>
+            <option class="dropdown_text">Bahamas</option>
+            <option class="dropdown_text">Bahrain</option>
+            <option class="dropdown_text">Bangladesh</option>
+            <option class="dropdown_text">Barbados</option>
+            <option class="dropdown_text">Cabo Verde</option>
+            <option class="dropdown_text">Cambodia</option>
+            <option class="dropdown_text">Cameroon</option>
+            <option class="dropdown_text">Denmark</option>
+            <option class="dropdown_text">Djibouti</option>
+            <option class="dropdown_text">Germany</option>
           </select>
         </div>
 
@@ -295,7 +294,7 @@
     </i>
           </label>
 
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
@@ -310,40 +309,40 @@
     <div class="d-flex align-items-center gap-3">
       
       <!-- From -->
-      <select class="form-select custom-input-width-calender">
-        <option>--Select--</option>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
+      <select class="form-select custom-input-width-calender dropdown_text">
+        <option class="dropdown_text">--Select--</option>
+        <option class="dropdown_text">January</option>
+        <option class="dropdown_text">February</option>
+        <option class="dropdown_text">March</option>
+        <option class="dropdown_text">April</option>
+        <option class="dropdown_text">May</option>
+        <option class="dropdown_text">June</option>
+        <option class="dropdown_text">July</option>
+        <option class="dropdown_text">August</option>
+        <option class="dropdown_text">September</option>
+        <option class="dropdown_text">October</option>
+        <option class="dropdown_text">November</option>
+        <option class="dropdown_text">December</option>
       </select>
 
       <!-- TO -->
       <span class="fw-semibold">To</span>
 
       <!-- To -->
-      <select class="form-select custom-input-width-calender">
-        <option>--Select--</option>
-          <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
+      <select class="form-select custom-input-width-calender dropdown_text">
+        <option class="dropdown_text">--Select--</option>
+          <option class="dropdown_text">January</option>
+        <option class="dropdown_text">February</option>
+        <option class="dropdown_text">March</option>
+        <option class="dropdown_text">April</option>
+        <option class="dropdown_text">May</option>
+        <option class="dropdown_text">June</option>
+        <option class="dropdown_text">July</option>
+        <option class="dropdown_text">August</option>
+        <option class="dropdown_text">September</option>
+        <option class="dropdown_text">October</option>
+        <option class="dropdown_text">November</option>
+        <option class="dropdown_text">December</option>
       </select>
 
     </div>
@@ -470,16 +469,12 @@
     <div class="fw-semibold footer-title">Wildlife Conservation Society</div>
 
     <div class="footer-text px-2">
-         WCS, the “W” logo, WE STAND FOR WILDLIFE, I STAND FOR WILDLIFE, and STAND FOR WILDLIFE are service marks of Wildlife Conservation Society.
-
+      
+        <span>2300 Southern Boulevard Bronx, New York 10460</span>
     </div>
 
-    <div class="footer-divider mx-auto"></div>
   </div>
 
-  <div class="wcs-footer-bottom text-center m-0">
-    <small class="m-0">©2025 Wildlife Conservation Society</small>
-  </div>
 </footer>
 </div>
 
