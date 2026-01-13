@@ -18,7 +18,7 @@
 
 <!-- ================= HEADER IMAGE (STICKY) ================= -->
 <div class="header-image sticky-top">
-  <img src="assets/images/Headers/Sub_banking Information.jpg" class="w-100" alt="Header Image">
+  <img src="assets/images/Headers/Stringray_header.jpg" class="w-100" alt="Header Image">
 </div>
 
 <!-- ================= NAVBAR (STICKY) ================= -->
@@ -38,45 +38,46 @@
 </div>
 
 <!-- ------------------Wizard----------------------- -->
-<div class="container-fluid py-5">
-  <div class="wizard-line-b">
+<div class="wizard-strip py-4">
+    <div class="container-fluid w-100">
 
-    <!-- Icon 1 -->
-    <div class="wizard-icon start">
-      <i class="fa-sharp fa-solid fa-building fa-xl" style="color: #ffffff;"></i>
-    </div>
+      <nav aria-label="Wizard Progress">
+        <ol class="wizard">
 
-    <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text between-1-2 fw-bold">
-      Organizational Information
-    </div>
+          <!-- Step 1 (active like screenshot left) -->
+          <li class="wizard-step">
+            <a class="wizard-link" href="#" aria-current="step">
+              <span class="wizard-circle">1</span>
+              <span class="wizard-label">Organizational Information</span>
+            </a>
+          </li>
 
-    <!-- Icon 2 -->
-    <div class="wizard-icon middle-b">
-     <i class="fa-solid fa-gavel fa-xl" style="color: #ffffff;"></i>
-    </div>
-    <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text between-2-3-b fw-bold">
-      Economic Sanctions - Counter Terrorism
-    </div>
+          <!-- Step 2 -->
+          <li class="wizard-step">
+            <a class="wizard-link" href="#">
+              <span class="wizard-circle">2</span>
+              <span class="wizard-label">Economic Sanctions - Counter Terrorism</span>
+            </a>
+          </li>
 
-    <!-- Icon 3 -->
-    <div class="wizard-icon end-b">
-   <i class="fa-solid fa-building-columns fa-xl" style="color: #ffffff;"></i>
-    </div>
-     <!-- Text between icon 1 & 2 -->
-    <div class="wizard-text-b between-3-0 fw-bold">
-     Electronic Banking Information
-    </div>
+          <!-- Step 3 -->
+          <li class="wizard-step is-active">
+            <a class="wizard-link" href="#">
+              <span class="wizard-circle">3</span>
+              <span class="wizard-label">Electronic Banking Information</span>
+            </a>
+          </li>
 
+        </ol>
+      </nav>
 
+    </div>
   </div>
-</div>
 
 
 <!-- ================= FORM CONTAINER (ONE SINGLE DIV) ================= -->
  <div class="content-scroll-area">
-<div class="container-fluid my-3 ">
+<div class="container-fluid mt-1 mb-4">
 
   <div class="form-card small-card">
 
@@ -118,17 +119,17 @@
 </div>
 
       <!-- Address -->
-      <h6 class="mt-4 mb-4">Organization Information:</h6>
+      <p class="mt-3 mb-3 org">Organization Information:</p>
 
       <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Organization Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Bank Account#/IBAN<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
@@ -136,12 +137,12 @@
 <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Name on Bank Account<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Organization Address<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
@@ -152,23 +153,22 @@
         <div class="col-md-6 mb-4">
           
           <label class="form-label">Country<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-     
-             <option>Afghanistan</option>
-            <option>Albania</option>
-            <option>Algeria</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+
+             <option class="dropdown_text">Afghanistan</option>
+            <option class="dropdown_text">Albania</option>
+            <option class="dropdown_text">Algeria</option>
            
-            <option>Bahamas</option>
+            <option class="dropdown_text">Bahamas</option>
 
-<option>Bangladesh</option>
-<option>Barbados</option>
-<option>Cabo Verde</option>
-<option>Cambodia</option>
-<option>Cameroon</option>
-<option>Denmark</option>
-
-<option>Germany</option>
+<option class="dropdown_text">Bangladesh</option>
+<option class="dropdown_text">Barbados</option>
+<option class="dropdown_text">Cabo Verde</option>
+<option class="dropdown_text">Cambodia</option>
+<option class="dropdown_text">Cameroon</option>
+<option class="dropdown_text">Denmark</option>
+<option class="dropdown_text">Germany</option>
 
 
           </select>
@@ -176,41 +176,41 @@
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Organization State<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-             <option>Kabul</option>
-<option>Herat</option>
-<option>Kandahar</option>
-<option>Tirana</option>
-<option>Durres</option>
-<option>Vlore</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+             <option class="dropdown_text">Kabul</option>
+<option class="dropdown_text">Herat</option>
+<option class="dropdown_text">Kandahar</option>
+<option class="dropdown_text">Tirana</option>
+<option class="dropdown_text">Durres</option>
+<option class="dropdown_text">Vlore</option>
 
-<option>Escaldes-Engordany</option>
-<option>Encamp</option>
-<option>New Providence</option>
-<option>Abaco</option>
+<option class="dropdown_text">Escaldes-Engordany</option>
+<option class="dropdown_text">Encamp</option>
+<option class="dropdown_text">New Providence</option>
+<option class="dropdown_text">Abaco</option>
 
           </select>
         </div>
          <div class="col-md-6 mb-4">
           <label class="form-label">Remit to Email<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
   
  <!-- Address -->
-      <h6 class="mt-4 mb-4">Organization Bank Information:</h6>
+      <p class="mt-2 mb-3 org">Organization Bank Information:</p>
 
       <div class="row">
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-3">
           <label class="form-label">Bank Name<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">SWIFT/BIC Code<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
@@ -218,7 +218,7 @@
 <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Bank Address<span class="text-danger">*</span></label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
        
@@ -231,42 +231,41 @@
         <div class="col-md-6 mb-4">
           
           <label class="form-label">Country<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-        
-             <option>Afghanistan</option>
-            <option>Albania</option>
-            <option>Algeria</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+
+             <option class="dropdown_text">Afghanistan</option>
+            <option class="dropdown_text">Albania</option>
+            <option class="dropdown_text">Algeria</option>
            
-            <option>Bahamas</option>
+            <option class="dropdown_text">Bahamas</option>
 
-<option>Bangladesh</option>
-<option>Barbados</option>
-<option>Cabo Verde</option>
-<option>Cambodia</option>
-<option>Cameroon</option>
-<option>Denmark</option>
-
-<option>Germany</option>
+<option class="dropdown_text">Bangladesh</option>
+<option class="dropdown_text">Barbados</option>
+<option class="dropdown_text">Cabo Verde</option>
+<option class="dropdown_text">Cambodia</option>
+<option class="dropdown_text">Cameroon</option>
+<option class="dropdown_text">Denmark</option>
+<option class="dropdown_text">Germany</option>
 
           </select>
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Bank State<span class="text-danger">*</span></label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-                        <option>Kabul</option>
-<option>Herat</option>
-<option>Kandahar</option>
-<option>Tirana</option>
-<option>Durres</option>
-<option>Vlore</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+                        <option class="dropdown_text">Kabul</option>
+<option class="dropdown_text">Herat</option>
+<option class="dropdown_text">Kandahar</option>
+<option class="dropdown_text">Tirana</option>
+<option class="dropdown_text">Durres</option>
+<option class="dropdown_text">Vlore</option>
 
-<option>Escaldes-Engordany</option>
-<option>Encamp</option>
-<option>New Providence</option>
-<option>Abaco</option>
+<option class="dropdown_text">Escaldes-Engordany</option>
+<option class="dropdown_text">Encamp</option>
+<option class="dropdown_text">New Providence</option>
+<option class="dropdown_text">Abaco</option>
 
           </select>
         </div>
@@ -275,17 +274,17 @@
       
 
         
-      <h6 class="mt-4 mb-4">Intermediary Bank Information:</h6>
+      <p class="mt-2 mb-3 org">Intermediary Bank Information:</p>
 
       <div class="row">
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-3">
           <label class="form-label">Bank Name</label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
         <div class="col-md-6 mb-4">
           <label class="form-label">ABA Number</label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
       </div>
 
@@ -293,7 +292,7 @@
 <div class="row">
         <div class="col-md-6 mb-4">
           <label class="form-label">Bank Address</label>
-          <input type="text" class="form-control custom-input-width">
+          <input type="text" class="form-control custom-input-width dropdown_text">
         </div>
 
        
@@ -306,23 +305,22 @@
         <div class="col-md-6 mb-4">
           
           <label class="form-label">Country</label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-          <option>--Select--</option>
-             <option>Afghanistan</option>
-            <option>Albania</option>
-            <option>Algeria</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+          <option class="dropdown_text">--Select--</option>
+             <option class="dropdown_text">Afghanistan</option>
+            <option class="dropdown_text">Albania</option>
+            <option class="dropdown_text">Algeria</option>
            
-            <option>Bahamas</option>
+            <option class="dropdown_text">Bahamas</option>
 
-<option>Bangladesh</option>
-<option>Barbados</option>
-<option>Cabo Verde</option>
-<option>Cambodia</option>
-<option>Cameroon</option>
-<option>Denmark</option>
-
-<option>Germany</option>
+<option class="dropdown_text">Bangladesh</option>
+<option class="dropdown_text">Barbados</option>
+<option class="dropdown_text">Cabo Verde</option>
+<option class="dropdown_text">Cambodia</option>
+<option class="dropdown_text">Cameroon</option>
+<option class="dropdown_text">Denmark</option>
+<option class="dropdown_text">Germany</option>
 
 
           </select>
@@ -330,19 +328,19 @@
 
         <div class="col-md-6 mb-4">
           <label class="form-label">Bank State</label>
-          <select class="form-select custom-input-width">
-            <option>--Select--</option>
-                       <option>Kabul</option>
-<option>Herat</option>
-<option>Kandahar</option>
-<option>Tirana</option>
-<option>Durres</option>
-<option>Vlore</option>
+          <select class="form-select custom-input-width dropdown_text">
+            <option class="dropdown_text">--Select--</option>
+                       <option class="dropdown_text">Kabul</option>
+<option class="dropdown_text">Herat</option>
+<option class="dropdown_text">Kandahar</option>
+<option class="dropdown_text">Tirana</option>
+<option class="dropdown_text">Durres</option>
+<option class="dropdown_text">Vlore</option>
 
-<option>Escaldes-Engordany</option>
-<option>Encamp</option>
-<option>New Providence</option>
-<option>Abaco</option>
+<option class="dropdown_text">Escaldes-Engordany</option>
+<option class="dropdown_text">Encamp</option>
+<option class="dropdown_text">New Providence</option>
+<option class="dropdown_text">Abaco</option>
 
           </select>
         </div>
@@ -369,16 +367,12 @@
     <div class="fw-semibold footer-title">Wildlife Conservation Society</div>
 
     <div class="footer-text px-2">
-         WCS, the “W” logo, WE STAND FOR WILDLIFE, I STAND FOR WILDLIFE, and STAND FOR WILDLIFE are service marks of Wildlife Conservation Society.
-
+       
+        <span>2300 Southern Boulevard Bronx, New York 10460</span>
     </div>
 
-    <div class="footer-divider mx-auto"></div>
   </div>
 
-  <div class="wcs-footer-bottom text-center m-0">
-    <small class="m-0">©2025 Wildlife Conservation Society</small>
-  </div>
 </footer>
 </div>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
