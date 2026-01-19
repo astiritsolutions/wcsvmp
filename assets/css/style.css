@@ -370,7 +370,7 @@
     }
 
     .wizard-label{
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.15;
       max-width: 240px;
       word-break: break-word;
@@ -384,7 +384,7 @@
     }
     .wizard-step.is-active .wizard-label{
       color: var(--green);
-      font-weight: 700;
+    font-weight: bold;
     }
 
     .wizard-step.is-done .wizard-circle{
@@ -834,65 +834,6 @@
 
 
 
-/* ------------------------------------------- */
-
-.wizard-line-e {
-  position: relative;
-  width: 100%;
-  max-width: 1500px;
-  height: 4px;
-  background-color: #cfd4d9;
-  margin: auto;
-}
-
-
-.wizard-line-e::after {
-  content: "";
-  position: absolute;
-  left: 3%;
-  right: 40%;
-  width: 72%;              /* 100% - 40% */
-  height: 4px;
-  background-color: #2f8f6b; /* ASH */
-  z-index: 1;
-}
-
-
-
-.wizard-line-b {
-  position: relative;
-  width: 100%;
-  max-width: 1500px;
-  height: 4px;
-  background-color: #cfd4d9;
-  margin: auto;
-}
-
-
-.wizard-line-b::after {
-  content: "";
-  position: absolute;
-  left: 3%;
-  right: 10%;
-  width: 97%;              /* 100% - 40% */
-  height: 4px;
-  background-color: #2f8f6b; /* ASH */
-  z-index: 1;
-}
-
-
-
-
-/* Prevent overflow issues */
-.wizard-line {
-  overflow: visible;
-}
-
-/* Control icon font size instead of fa-xl */
-.wizard-icon i {
-  font-size: 22px;
-}
-
 
 
 
@@ -1078,12 +1019,7 @@
   
 }
 
-/* Responsive spacing */
-@media (max-width: 768px) {
-  .senior-box {
-    padding: 16px;
-  }
-}
+
 
 /* Same button design */
 .same-btn {
@@ -1098,6 +1034,79 @@
   text-decoration: none;
   
 }
+/* Small devices (>= 576px) */
+@media (min-width: 576px) {
+  .form-card-thankyou {
+    padding: 48px 28px;
+    min-height: 360px;
+  }
+}
+
+/* Medium devices / Tablets (>= 768px) */
+@media (min-width: 768px) {
+  .form-card-thankyou {
+    padding: 70px 50px;
+    min-height: 420px;
+  }
+
+  .thankyou-card {
+    padding: 16px;
+  }
+}
+
+/* Large devices / Laptops (>= 992px) */
+@media (min-width: 992px) {
+  .form-card-thankyou {
+    padding: 100px 90px;   /* big padding looks good on desktop */
+    min-height: 480px;
+  }
+}
+/* Mobile screens (max 576px) */
+@media (max-width: 576px) {
+  .form-card-thankyou {
+    padding: 28px 16px;   /* smaller padding for phones */
+    height: auto;         /* remove fixed height */
+    min-height: 320px;    /* keeps the card tall enough */
+  }
+
+  .thankyou-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .thankyou-title {
+    font-size: 22px;
+  }
+
+  .thankyou-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .same-btn {
+    width: 100%;
+    max-width: 260px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.btn_addmore{
+  background-color: #1f7a5c; /* Blue */
+  color: #fff;
+  border: none;
+  padding: 5px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  
+  text-decoration: none;
+  
+
+}
+
 
 .wcs-footer {
   background-color: #1e6b4e;
